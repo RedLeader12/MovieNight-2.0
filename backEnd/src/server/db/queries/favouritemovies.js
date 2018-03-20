@@ -17,8 +17,17 @@ function updatefavouriteMovie(id, movie) {
   .where({ id: parseInt(id) })
   .returning('*');
 }
+
+function deletefavouriteMovie(id) {
+  return knex('favouritemovies')
+  .del()
+  .where({ id: parseInt(id) })
+  .returning('*');
+}
+
   module.exports = {
     getAllfavouriteMovies,
     addfavouriteMovie,
-    updatefavouriteMovie
+    updatefavouriteMovie,
+    deletefavouriteMovie
   };
