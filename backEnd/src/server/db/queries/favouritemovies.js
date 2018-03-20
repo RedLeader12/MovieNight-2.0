@@ -10,8 +10,15 @@ function addfavouriteMovie(movie) {
   .insert(movie)
   .returning('*');
 }
-  
+
+function updatefavouriteMovie(id, movie) {
+  return knex('favouritemovies')
+  .update(movie)
+  .where({ id: parseInt(id) })
+  .returning('*');
+}
   module.exports = {
     getAllfavouriteMovies,
-    addfavouriteMovie
+    addfavouriteMovie,
+    updatefavouriteMovie
   };
