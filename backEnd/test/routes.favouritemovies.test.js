@@ -35,7 +35,7 @@ describe('routes : favouritemovies', () => {
   });
 
   describe('POST /api/v1/favouritemovies', () => {
-    it('should return the movie that was added', (done) => {
+    it('should return the favourite movie that was added', (done) => {
       chai.request(server)
       .post('/api/v1/favouritemovies')
       .send({
@@ -54,6 +54,21 @@ describe('routes : favouritemovies', () => {
         res.body.data[0].should.include.keys(
            'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
         );
+        done();
+      });
+    });
+    it('should throw an error if the payload is malformed', (done) => {
+      chai.request(server)
+      .post('/api/v1/favouritemovies')
+      .send({
+        overview: 'Hey Titantic'
+      })
+      .end((err, res) => {
+        should.exist(err);
+        res.status.should.equal(400);
+        res.type.should.equal('application/json');
+        res.body.status.should.eql('error');
+        should.exist(res.body.message);
         done();
       });
     });
