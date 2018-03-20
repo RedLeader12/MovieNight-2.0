@@ -1,7 +1,6 @@
 exports.up = (knex, Promise) => {
     return knex.schema.createTable('favouritemovies', (table) => {
       table.increments();
-      table.string('_id').notNullable().unique();
       table.string('overview').notNullable();
       table.string('poster_path').notNullable();
       table.string('release_date').notNullable();
