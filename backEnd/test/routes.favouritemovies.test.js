@@ -117,8 +117,8 @@ describe('routes : favouritemovies', () => {
     });
   });
 
-  describe('DELETE /api/v1/movies/:id', () => {
-    it('should return the movie that was deleted', (done) => {
+  describe('DELETE /api/v1/favouritemovies/:id', () => {
+    it('should return the favourite movie that was deleted', (done) => {
       knex('favouritemovies')
       .select('*')
       .then((movies) => {
@@ -135,8 +135,8 @@ describe('routes : favouritemovies', () => {
             'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
           );
           knex('favouritemovies').select('*')
-          .then((updatedMovies) => {
-            updatedMovies.length.should.eql(lengthBeforeDelete - 1);
+          .then((updatedfavouriteMovies) => {
+            updatedfavouriteMovies.length.should.eql(lengthBeforeDelete - 1);
             done();
           });
         });
@@ -150,7 +150,7 @@ describe('routes : favouritemovies', () => {
         res.status.should.equal(404);
         res.type.should.equal('application/json');
         res.body.status.should.eql('error');
-        res.body.message.should.eql('That movie does not exist.');
+        res.body.message.should.eql('That favourite movie does not exist.');
         done();
       });
     });
