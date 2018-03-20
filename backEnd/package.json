@@ -4,6 +4,7 @@
   "description": "package for the backEnd",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/server/index.js",
     "test": "./node_modules/mocha/bin/_mocha ./test/**/*.test.js"
   },
   "author": "",
