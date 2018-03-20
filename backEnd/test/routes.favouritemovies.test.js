@@ -78,12 +78,12 @@ describe('routes : favouritemovies', () => {
     it('should return the favourite movie that was updated', (done) => {
       knex('favouritemovies')
       .select('*')
-      .then((movie) => {
-        const favouritemovieObject = movie[0];
+      .then((favouritemovie) => {
+        const favouritemovieObject = favouritemovie[0];
         chai.request(server)
         .put(`/api/v1/favouritemovies/${favouritemovieObject.id}`)
         .send({
-          rating: 9
+          vote_average: 10
         })
         .end((err, res) => {
           should.not.exist(err);
@@ -94,7 +94,8 @@ describe('routes : favouritemovies', () => {
             'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
           );
           const newfavouriteMovieObject = res.body.data[0];
-          newfavouriteMovieObject.rating.should.not.eql(favouritemovieObject.rating);
+          console.log(newfavouriteMovieObject)
+          newfavouriteMovieObject.vote_average.should.not.eql(favouritemovieObject.vote_average);
           done();
         });
       });
