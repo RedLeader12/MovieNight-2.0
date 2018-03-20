@@ -7,7 +7,7 @@ exports.up = (knex, Promise) => {
       table.string('release_date').notNullable();
       table.string('title').notNullable();
       table.integer('vote_average').notNullable();
-      table.boolean('popularity').notNullable();
+      table.decimal('popularity').notNullable();
     });
   };
   
