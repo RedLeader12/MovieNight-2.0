@@ -117,6 +117,45 @@ describe('routes : favouritemovies', () => {
     });
   });
 
+  describe('DELETE /api/v1/movies/:id', () => {
+    it('should return the movie that was deleted', (done) => {
+      knex('favouritemovies')
+      .select('*')
+      .then((movies) => {
+        const favouritemovieObject = movies[0];
+        const lengthBeforeDelete = movies.length;
+        chai.request(server)
+        .delete(`/api/v1/favouritemovies/${favouritemovieObject.id}`)
+        .end((err, res) => {
+          should.not.exist(err);
+          res.status.should.equal(200);
+          res.type.should.equal('application/json');
+          res.body.status.should.eql('success');
+          res.body.data[0].should.include.keys(
+            'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
+          );
+          knex('favouritemovies').select('*')
+          .then((updatedMovies) => {
+            updatedMovies.length.should.eql(lengthBeforeDelete - 1);
+            done();
+          });
+        });
+      });
+    });
+    it('should throw an error if the movie does not exist', (done) => {
+      chai.request(server)
+      .delete('/api/v1/favouritemovies/9999999')
+      .end((err, res) => {
+        should.exist(err);
+        res.status.should.equal(404);
+        res.type.should.equal('application/json');
+        res.body.status.should.eql('error');
+        res.body.message.should.eql('That movie does not exist.');
+        done();
+      });
+    });
+  });
+
   afterEach(() => {
     return knex.migrate.rollback();
   });
