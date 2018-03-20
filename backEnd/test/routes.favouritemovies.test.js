@@ -34,6 +34,32 @@ describe('routes : favouritemovies', () => {
     });
   });
 
+  describe('POST /api/v1/favouritemovies', () => {
+    it('should return the movie that was added', (done) => {
+      chai.request(server)
+      .post('/api/v1/favouritemovies')
+      .send({
+        _id: "396371",
+        overview: "Tom Cruise takes a whirlwind adventure with partner Nick.",
+        poster_path: "/h9hUP5ZJGsjL2wbERrGlj4dMjZq.jpg",
+        release_date: "2017-12-21",
+        title: "Top Gun",
+        ownScore: 5.0,
+        popularity: 9.9
+      })
+      .end((err, res) => {
+        should.not.exist(err);
+        res.status.should.equal(201);
+        res.type.should.equal('application/json');
+        res.body.status.should.eql('success');
+        res.body.data[0].should.include.keys(
+            '_id', 'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
+        );
+        done();
+      });
+    });
+  });
+
   afterEach(() => {
     return knex.migrate.rollback();
   });
