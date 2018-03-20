@@ -1,10 +1,13 @@
 const Koa = require('koa');
+const bodyParser = require('koa-bodyparser');
+
 const indexRoutes = require('./routes/index');
 const movieRoutes = require('./routes/favouritemovies');
 
 const app = new Koa();
 const PORT = process.env.PORT || 3002;
 
+app.use(bodyParser());
 app.use(indexRoutes.routes());
 app.use(movieRoutes.routes());
 
