@@ -94,7 +94,6 @@ describe('routes : favouritemovies', () => {
             'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
           );
           const newfavouriteMovieObject = res.body.data[0];
-          console.log(newfavouriteMovieObject)
           newfavouriteMovieObject.vote_average.should.not.eql(favouritemovieObject.vote_average);
           done();
         });
