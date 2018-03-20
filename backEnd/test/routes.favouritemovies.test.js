@@ -99,6 +99,22 @@ describe('routes : favouritemovies', () => {
         });
       });
     });
+
+    it('should throw an error if the movie does not exist', (done) => {
+      chai.request(server)
+      .put('/api/v1/favouritemovies/9999999')
+      .send({
+        vote_average: 10
+      })
+      .end((err, res) => {
+        should.exist(err);
+        res.status.should.equal(404);
+        res.type.should.equal('application/json');
+        res.body.status.should.eql('error');
+        res.body.message.should.eql('That favourite movie does not exist.');
+        done();
+      });
+    });
   });
 
   afterEach(() => {
