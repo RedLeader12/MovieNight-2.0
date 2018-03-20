@@ -74,6 +74,33 @@ describe('routes : favouritemovies', () => {
     });
   });
 
+  describe('PUT /api/v1/favouritemovies', () => {
+    it('should return the favourite movie that was updated', (done) => {
+      knex('favouritemovies')
+      .select('*')
+      .then((movie) => {
+        const favouritemovieObject = movie[0];
+        chai.request(server)
+        .put(`/api/v1/favouritemovies/${favouritemovieObject.id}`)
+        .send({
+          rating: 9
+        })
+        .end((err, res) => {
+          should.not.exist(err);
+          res.status.should.equal(200);
+          res.type.should.equal('application/json');
+          res.body.status.should.eql('success');
+          res.body.data[0].should.include.keys(
+            'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
+          );
+          const newfavouriteMovieObject = res.body.data[0];
+          newfavouriteMovieObject.rating.should.not.eql(favouritemovieObject.rating);
+          done();
+        });
+      });
+    });
+  });
+
   afterEach(() => {
     return knex.migrate.rollback();
   });
