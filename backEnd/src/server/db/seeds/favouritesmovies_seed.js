@@ -7,7 +7,7 @@ exports.seed = (knex, Promise) => {
       release_date: "2017-12-21",
       title: "Top Gun",
       vote_average: 5.0,
-      popularity: 9.9
+      popularity: 8.0
     });
   })
 .then(() => {
@@ -17,7 +17,7 @@ exports.seed = (knex, Promise) => {
     release_date: "2017-09-21",
     title: "The Death Cure",
     vote_average: 8.0,
-    popularity: 5.9
+    popularity: 6.5
   });
 })
 .then(() => {
@@ -27,7 +27,7 @@ exports.seed = (knex, Promise) => {
     release_date: "2017-04-21",
     title: "Playtime",
     vote_average: 10.0,
-    popularity: 10 
+    popularity: 3.2
   });
 })
 .then(() => {
@@ -37,7 +37,7 @@ exports.seed = (knex, Promise) => {
     release_date: "2017-02-21",
     title: "PostmAN pAT",
     vote_average: 5.0,
-    popularity: 6.4
+    popularity: 10.0
   });
 })
 };
