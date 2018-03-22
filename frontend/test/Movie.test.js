@@ -8,7 +8,6 @@ import Movie from '../src/components/Movie'
 
 describe('Movie Component', () => {
  
- // make our assertion and what we expect to happen 
  it('should render without throwing an error', () => {
    expect(shallow(< Movie />).exists(<div className='Movie'></div>)).toBe(true)
  })
