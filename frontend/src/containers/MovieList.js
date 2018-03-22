@@ -38,9 +38,7 @@ componentDidMount() {
 }
 
 favouriteSelectHandler = (index) => {
-    console.log(index)
     let selected = this.state.moviesList[index]
-    console.log(selected)
 
     axios.post(config.database, {
         overview: selected.overview ,
