@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from '../config.json'
+import axios from 'axios'
 
 import Movie from '../components/Movie.js'
 
@@ -29,6 +30,27 @@ componentDidMount() {
         });
 }
 
+favouriteSelectHandler = (index) => {
+    console.log(index)
+    let selected = this.state.moviesList[index]
+    console.log(selected)
+
+    axios.post('http://localhost:3002/api/v1/favouritemovies', {
+        overview: selected.overview,
+        poster_path: selected.poster_path,
+        release_date: selected.release_date,
+        title: selected.title, 
+        vote_average: selected.vote_average,
+        popularity:selected.popularity 
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  
+}
 
 render() {
 
@@ -40,6 +62,7 @@ render() {
         voteAverage={movie.vote_average}
         popularity={movie.popularity}
         posterPath={"https://image.tmdb.org/t/p/w200"+ movie.poster_path}
+        onClick={() => this.favouriteSelectHandler(index)}
         /> 
     ))
 
