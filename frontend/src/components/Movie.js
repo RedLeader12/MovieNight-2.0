@@ -4,7 +4,7 @@ import MoviesList from '../containers/MovieList';
 class Movie extends Component {
   render () {
     return (
-        <div>
+        <div className="Movie">
             <img src={this.props.posterPath} />
               <h2>{this.props.title}</h2>
               <span>{this.props.popularity} </span>
