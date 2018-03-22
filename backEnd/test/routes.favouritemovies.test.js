@@ -25,7 +25,7 @@ describe('routes : favouritemovies', () => {
         res.status.should.equal(200);
         res.type.should.equal('application/json');
         res.body.status.should.eql('success');
-        res.body.data.length.should.eql(1);
+        res.body.data.length.should.eql(4);
         res.body.data[0].should.include.keys(
           'overview', 'poster_path', 'release_date', 'title','vote_average','popularity',
         );
@@ -72,6 +72,34 @@ describe('routes : favouritemovies', () => {
         done();
       });
     });
+    // it('should return an error when there is 6 more in the database', (done) => {
+    //   chai.request(server)
+    //   .post('/api/v1/favouritemovies')
+    //   .send({
+    //     overview: "Tom Cruise takes a whirlwind adventure with partner Nick.",
+    //     poster_path: "/h9hUP5ZJGsjL2wbERrGlj4dMjZq.jpg",
+    //     release_date: "2017-12-21",
+    //     title: "Top Gun",
+    //     vote_average: 5.0,
+    //     popularity: 9.9
+    //   },
+    //   {
+    //     overview: "Heya",
+    //     poster_path: "/h9hUP5ZJGsjL2wbERrGlj4dMjZq.jpg",
+    //     release_date: "2017-12-21",
+    //     title: "Heya",
+    //     vote_average: 10.0,
+    //     popularity: 9.9
+    //   })
+    //   .end((err, res) => {
+    //     should.exist(err);
+    //     res.status.should.equal(400);
+    //     res.type.should.equal('application/json');
+    //     res.body.status.should.eql('error');
+    //     should.exist(res.body.message);
+    //     done();
+    //   });
+    // });
   });
 
   describe('PUT /api/v1/favouritemovies', () => {
