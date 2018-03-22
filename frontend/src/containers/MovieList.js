@@ -29,6 +29,7 @@ componentDidMount() {
         });
 }
 
+
 render() {
 
     let movies = this.state.moviesList.map((movie, index) =>(
