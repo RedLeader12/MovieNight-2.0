@@ -16,7 +16,7 @@ window.fetch(config.database)
     return results.json();
     })
     .then(function(data){
-        console.log(data.results)
+        console.log(data)
     })
     .catch(function(error) {
     console.log(error)
@@ -27,7 +27,7 @@ render() {
 
     return (
         <div className="Favourites">
-            {movies}
+            <span> hello </span> 
         </div>
     );
   }
