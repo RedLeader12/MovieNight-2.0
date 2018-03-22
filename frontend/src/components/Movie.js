@@ -5,11 +5,11 @@ class Movie extends Component {
   render () {
     return (
         <div className="Movie">
-            <img src={this.props.posterPath} />
-              <h2>{this.props.title}</h2>
+            <img id="posterPath" src={this.props.posterPath} />
+              <h2 id="title" >{this.props.title}</h2>
               <span>{this.props.voteAverage} </span>
-              <span>{this.props.popularity} </span>
-              <span>{this.props.overview} </span>
+              <span id="popularity">{this.props.popularity} </span>
+              <span id="overview">{this.props.overview} </span>
               <button onClick={this.props.onClick}> Favour Movie </button> 
         </div>
     );

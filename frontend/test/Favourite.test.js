@@ -11,4 +11,8 @@ describe('Favourite Component', () => {
  it('should render without throwing an error', () => {
    expect(shallow(< Favourite />).exists(<div className='Favourite'></div>)).toBe(true)
  })
+ 
+ it('renders the title', () => {
+  expect(shallow(<Favourite />).find('#title').length).toEqual(1)
+ })
 })

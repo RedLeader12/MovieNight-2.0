@@ -6,7 +6,7 @@ class Favourite extends Component {
     return (
         <div className="FavouritesList">
             <img src={this.props.posterPath} /> 
-            <span> {this.props.title} </span>
+            <span id="title"> {this.props.title} </span>
             <button> Select Movie </button> 
         </div>
     );
