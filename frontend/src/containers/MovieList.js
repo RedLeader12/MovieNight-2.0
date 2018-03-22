@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../config.json'
 import axios from 'axios'
+import qs from 'qs'
 
 import Movie from '../components/Movie.js'
 
@@ -21,8 +22,14 @@ componentDidMount() {
         })
         .then(function(data){
             console.log(data.results)
+            let final = data.results
+            final.map(movie => {
+                let number = movie.popularity
+                movie.popularity = Math.round( number * 10 ) / 10;
+                return movie 
+            })
             self.setState({
-            moviesList: data.results
+            moviesList: final
             })
         })
         .catch(function(error) {
@@ -35,21 +42,23 @@ favouriteSelectHandler = (index) => {
     let selected = this.state.moviesList[index]
     console.log(selected)
 
-    axios.post('http://localhost:3002/api/v1/favouritemovies', {
-        overview: selected.overview,
+    axios.post(config.database, {
+        overview: selected.overview ,
         poster_path: selected.poster_path,
         release_date: selected.release_date,
         title: selected.title, 
         vote_average: selected.vote_average,
-        popularity:selected.popularity 
+        popularity: selected.popularity,
       })
       .then(function (response) {
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+        console.log(error.config);
       });
-  
 }
 
 render() {
@@ -60,8 +69,8 @@ render() {
         title={movie.title}
         overview={movie.overview}
         voteAverage={movie.vote_average}
-        popularity={movie.popularity}
         posterPath={"https://image.tmdb.org/t/p/w200"+ movie.poster_path}
+        popularity={movie.popularity}
         onClick={() => this.favouriteSelectHandler(index)}
         /> 
     ))
