@@ -11,9 +11,10 @@ class MovieList extends Component {
 render() {
     return (
         <div className="MovieList">
+
         </div>
     );
-    }
+  }
 }
-
-export default MovieList 
+    
+export default MovieList;
