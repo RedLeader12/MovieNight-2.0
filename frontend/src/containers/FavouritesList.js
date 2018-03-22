@@ -8,7 +8,7 @@ class FavouritesList extends Component {
     constructor(props) {
     super(props)
         this.state = {
-            favourites: [],
+            favourites: []
         }
     }
 
@@ -30,6 +30,23 @@ componentDidMount() {
         });
 }
 
+deleteFavouriteHandler = (index) => {
+    let selected = this.state.favourites[index]
+    console.log(index)
+    console.log(selected.id)
+    axios.delete(config.database + '/' + selected.id)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(function (error) {
+        console.log(error);
+        console.log(error.response);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+        console.log(error.config);
+      });
+}
+
 render() {
 
     let favourites = this.state.favourites.map((movie, index) =>(
@@ -37,6 +54,7 @@ render() {
         key = {index}
         title={movie.title}
         posterPath={"https://image.tmdb.org/t/p/w200"+ movie.poster_path}
+        onClick={() => this.deleteFavouriteHandler(index)}
         /> 
     ))
 
