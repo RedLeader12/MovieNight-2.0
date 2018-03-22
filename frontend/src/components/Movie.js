@@ -7,8 +7,8 @@ class Movie extends Component {
         <div className="Movie">
             <img src={this.props.posterPath} />
               <h2>{this.props.title}</h2>
-              <span>{this.props.popularity} </span>
               <span>{this.props.voteAverage} </span>
+              <span>{this.props.popularity} </span>
               <span>{this.props.overview} </span>
               <button onClick={this.props.onClick}> Favour Movie </button> 
         </div>
