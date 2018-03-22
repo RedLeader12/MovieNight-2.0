@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieList from './MovieList'
+import MovieList from './containers/MovieList'
 
 class App extends Component {
   render() {
