@@ -10,7 +10,7 @@ class Movie extends Component {
               <span>{this.props.popularity} </span>
               <span>{this.props.voteAverage} </span>
               <span>{this.props.overview} </span>
-              <button> Favour Movie </button> 
+              <button onClick={this.props.onClick}> Favour Movie </button> 
         </div>
     );
   }
