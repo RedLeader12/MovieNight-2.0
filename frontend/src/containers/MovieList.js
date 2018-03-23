@@ -74,7 +74,7 @@ render() {
     ))
 
     return (
-        <div className="MovieList">
+        <div className="MovieList" style={localStyles.MovieList}>
             {movies}
         </div>
     );
@@ -82,3 +82,16 @@ render() {
 }
     
 export default MovieList;
+
+const localStyles = { 
+    MovieList: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        border: '3px solid red',
+        padding: 40,
+        position: 'absolute',
+        top: 0,
+        right: 0 ,
+    }
+}
