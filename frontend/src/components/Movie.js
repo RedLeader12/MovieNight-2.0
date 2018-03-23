@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MoviesList from '../containers/MovieList';
+import Styles from '../styles/baseStyling'
 
 class Movie extends Component {
   render () {
@@ -21,6 +22,7 @@ const localStyles = {
   Movie: {
     border: '3px solid green',
     width: '20%',
+    marginTop: 80, 
     position: 'relative',
     left: '8.5%'
 

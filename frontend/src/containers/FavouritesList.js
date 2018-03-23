@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import config from '../config.json'
 import axios from 'axios'
 
+import Styles from '../styles/baseStyling'
 import Favourite from '../components/Favourite.js'
 
 class FavouritesList extends Component {
@@ -61,7 +62,7 @@ render() {
     console.log(favourites)
 
     return (
-        <div className="Favourites">
+        <div className="Favourites" style={localStyles.Favourites}>
         {favourites}
         </div>
     );
@@ -69,3 +70,16 @@ render() {
 }
     
 export default FavouritesList;
+
+const localStyles = { 
+    Favourites: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        border: '3px solid red',
+        padding: 40,
+        position: 'absolute',
+        top: 0,
+        right: 0 
+    }
+  }

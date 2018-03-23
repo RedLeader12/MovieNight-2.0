@@ -3,6 +3,7 @@ import config from '../config.json'
 import axios from 'axios'
 import qs from 'qs'
 
+import Styles from '../styles/baseStyling'
 import Movie from '../components/Movie.js'
 
 class MovieList extends Component {
