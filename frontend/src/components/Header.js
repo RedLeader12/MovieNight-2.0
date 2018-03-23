@@ -16,8 +16,8 @@ export default Header;
 const localStyles = { 
   Header: {
     border: '3px solid blue',
-    height: '100px',
+    height: '80px',
     position: 'relative',
-    width: '100vw'
+    zIndex: 1000,
   }
 }

@@ -76,6 +76,7 @@ render() {
 
     return (
         <div className="MovieList" style={localStyles.MovieList}>
+        <br style={localStyles.background}/> 
             {movies}
         </div>
     );
@@ -90,9 +91,10 @@ const localStyles = {
         flexDirection: 'row',
         flexWrap: 'wrap',
         border: '3px solid red',
-        padding: 40,
+        padding: '100px 200px',
         position: 'absolute',
-        top: 0,
-        right: 0 ,
-    }
+        top: 0, 
+        right: 0,
+        backgroundColor: Styles.colours.primary,
+    },
 }

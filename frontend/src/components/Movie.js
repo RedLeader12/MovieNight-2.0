@@ -20,18 +20,9 @@ export default Movie;
 
 const localStyles = { 
   Movie: {
+    flex: 2, 
     border: '3px solid green',
-    width: '20%',
-    marginTop: 80, 
     position: 'relative',
-    left: '8.5%'
-
+    padding: 20,
   },
-  overview: {
-
-  },
-  posterPath: {
-    borderRadius: 10,
-
-  }
 }
