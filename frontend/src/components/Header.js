@@ -6,7 +6,7 @@ class Header extends Component {
   render () {
     return (
         <div className="Header" style={localStyles.Header}>
-            <span> {this.props.header} </span> 
+            <span style={localStyles.title}> {this.props.header} </span> 
         </div>
     );
   }
@@ -19,5 +19,16 @@ const localStyles = {
     height: '80px',
     position: 'relative',
     zIndex: 1000,
+  },
+  title: {
+    color: Styles.colours.white,
+    fontWeight: Styles.fontFace.fontWeight,
+    fontSize: 30,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
+  
+
   }
 }
