@@ -11,9 +11,4 @@ const COLOURS = {
 
   module.exports = {
    colours: COLOURS,
-   fontFace: {
-    fontFamily: 'Raleway, sans-serif',
-    fontWeight: '600',
-    src: 'url' +('https://fonts.googleapis.com/css?family=Raleway:500,600,700')
-    },
   }
