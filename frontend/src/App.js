@@ -5,10 +5,12 @@ import MovieList from './containers/MovieList'
 import FavouritesList from './containers/FavouritesList'
 import Header from './components/Header'
 
+import Styles from './styles/baseStyling'
+
 const headingTitle = 'MovieNight'
 
 const App = () => (
-  <div className='App'>
+  <div className='App' style={localStyles.App}>
   <Header header={headingTitle}/>
     <Switch>
       <Route exact path='/' component={MovieList}/>
@@ -18,3 +20,9 @@ const App = () => (
 )
 
 export default App;
+
+const localStyles = { 
+  App: {
+      fontFamily: Styles.fontFace.fontFamily
+  },
+}
