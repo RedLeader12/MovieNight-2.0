@@ -11,6 +11,7 @@ const headingTitle = 'MovieNight'
 
 const App = () => (
   <div className='App' style={localStyles.App}>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet"/>
   <Header header={headingTitle}/>
     <Switch>
       <Route exact path='/' component={MovieList}/>
@@ -23,6 +24,6 @@ export default App;
 
 const localStyles = { 
   App: {
-      fontFamily: Styles.fontFace.fontFamily
+      fontFamily: 'QuickSand, sans-serif'
   },
 }
