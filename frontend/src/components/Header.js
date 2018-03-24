@@ -22,13 +22,11 @@ const localStyles = {
   },
   title: {
     color: Styles.colours.white,
-    fontWeight: Styles.fontFace.fontWeight,
+    fontWeight: '500',
     fontSize: 30,
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)'
-  
-
   }
 }
