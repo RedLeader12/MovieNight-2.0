@@ -1,5 +1,3 @@
-
-
 const COLOURS = {
     primary: "#1f2633",
     secondary: "#161c24",
@@ -12,5 +10,10 @@ const COLOURS = {
 
 
   module.exports = {
-   colours: COLOURS
+   colours: COLOURS,
+   fontFace: {
+    fontFamily: 'Raleway, sans-serif',
+    fontWeight: '600',
+    src: 'url' +('https://fonts.googleapis.com/css?family=Raleway:500,600,700')
+    },
   }
