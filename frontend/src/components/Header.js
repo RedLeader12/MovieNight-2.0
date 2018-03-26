@@ -20,7 +20,6 @@ const localStyles = {
     height: '80px',
     position: 'relative',
     zIndex: 1000,
-    border: '3px solid blue'
   },
   title: {
     color: Styles.colours.white,
