@@ -90,7 +90,6 @@ const localStyles = {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        border: '3px solid red',
         padding: '100px 200px',
         position: 'absolute',
         top: 0, 
