@@ -3,9 +3,9 @@ const COLOURS = {
     secondary: "#161c24",
     third: "#14171f",
     dark: "#020203",
-    light: '363d4b',
+    light: '#59606f',
     white: "#eeeeef",
-    yellow: "ecc044",
+    yellow: "#ecc044",
   }
 
 
