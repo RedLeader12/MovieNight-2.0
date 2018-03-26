@@ -9,7 +9,6 @@ const COLOURS = {
     darkyellow: "#e5b243"
   }
 
-
   module.exports = {
    colours: COLOURS,
   }
