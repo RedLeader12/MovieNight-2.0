@@ -11,7 +11,7 @@ const headingTitle = 'MovieNight'
 
 const App = () => (
   <div className='App' style={localStyles.App}>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:500:700" rel="stylesheet"/>
   <Header header={headingTitle}/>
     <Switch>
       <Route exact path='/' component={MovieList}/>
