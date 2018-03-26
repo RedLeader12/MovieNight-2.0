@@ -7,12 +7,19 @@ class Movie extends Component {
     return (
         <div className="Movie" style={localStyles.Movie}>
             <img id="posterPath" style={localStyles.poster} src={this.props.posterPath}/>
-              <h2 id="title" >{this.props.title}</h2>
-              <span>{this.props.voteAverage} </span>
-              <span id="popularity">{this.props.popularity} </span>
+              <h2 id="title" style={localStyles.title} >{this.props.title}</h2>
+              <div style={localStyles.detailBox}> 
+              <span style={localStyles.voteAverage} >{this.props.voteAverage} </span>
+              <button onClick={this.props.onClick} style={localStyles.button}> Favour Movie </button> 
+              </div> 
+              <div style={localStyles.overviewBox}> 
+              <div style={localStyles.descriptionBox}> 
+              <span style={localStyles.description} > Description: </span>
+              </div> 
+              <br style={localStyles.spacing}/> 
               <span id="overview" style={localStyles.overview}>{this.props.overview} </span>
+              </div> 
               < br/> 
-              <button onClick={this.props.onClick}> Favour Movie </button> 
         </div>
     );
   }
@@ -29,5 +36,43 @@ const localStyles = {
   poster: {
     borderRadius: 20, 
     boxShadow: '0px 10px 5px' + Styles.colours.third,
+  },
+  detailBox: {
+    padding: 10
+  },
+  voteAverage: {
+    color: Styles.colours.white, 
+  },
+  button: {
+    outline: 'none',
+    padding: 10, 
+    fontSize: 12,
+    borderRadius: 10, 
+    width: '60%',
+    color: Styles.colours.white, 
+    fontWeight: '600', 
+    backgroundColor: Styles.colours.yellow,
+    marginLeft: 45 
+  },
+  title: {
+    fontSize: 15, 
+    color: Styles.colours.white,
+  },
+  overviewBox: {
+    fontSize: 13, 
+    marginTop: 15, 
+    padding: 15, 
+    backgroundColor: Styles.colours.secondary
+  },
+  descriptionBox: {
+    padding: '0px 0px 0px 0px'
+  },
+  description: {
+    fontWeight: '700',
+    color: Styles.colours.light,
+  },
+  overview: {
+    color: Styles.colours.white,
+    fontSize: 12
   }
 }
