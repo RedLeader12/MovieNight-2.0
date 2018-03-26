@@ -51,8 +51,9 @@ const localStyles = {
     width: '60%',
     color: Styles.colours.white, 
     fontWeight: '600', 
-    backgroundColor: Styles.colours.yellow,
-    marginLeft: 45 
+    background: 'linear-gradient(to left,'+ Styles.colours.yellow + ','  + Styles.colours.darkyellow + ')',
+    marginLeft: 45,
+    border: 'none',
   },
   title: {
     fontSize: 15, 
