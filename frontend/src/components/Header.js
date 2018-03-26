@@ -33,7 +33,7 @@ const localStyles = {
   button: {
     outline: 'none',
     padding: 10, 
-    fontSize: 12,
+    fontSize: 13,
     borderRadius: 10, 
     width: '8%',
     color: Styles.colours.white, 
