@@ -29,7 +29,6 @@ export default Movie;
 const localStyles = { 
   Movie: {
     flex: 2, 
-    border: '3px solid green',
     position: 'relative',
     padding: 22,
   },
