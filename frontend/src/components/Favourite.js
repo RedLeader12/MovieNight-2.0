@@ -19,13 +19,14 @@ export default Favourite;
 
 const localStyles = { 
   FavouritesList: {
-    border: '3px solid green',
-    width: '15%',
+    width: '16%',
     position: 'relative',
     left: 45,
     marginTop: '10%',
     marginBottom: '10.6%',
-    padding: 20
+    padding: 20,
+    borderRadius: 5, 
+    backgroundColor: Styles.colours.third
   },
   detailBox: {
     marginTop: 15
@@ -41,7 +42,7 @@ const localStyles = {
   button: {
     outline: 'none',
     padding: 10, 
-    fontSize: 12,
+    fontSize: 13,
     borderRadius: 10, 
     width: '60%',
     color: Styles.colours.white, 
