@@ -76,10 +76,10 @@ const localStyles = {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        border: '3px solid red',
         padding: 40,
         position: 'absolute',
         top: 0,
-        right: 0 
+        right: 0 ,
+        backgroundColor: Styles.colours.primary,
     }
   }
