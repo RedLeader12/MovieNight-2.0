@@ -8,7 +8,9 @@ class Header extends Component {
     return (
         <div className="Header" style={localStyles.Header}>
             <span style={localStyles.title}> {this.props.header} </span> 
-            <Link to='/favourites'><button onClick={this.props.onClick} style={localStyles.button}> Favourites </button></Link>  
+            <Link to='/favourites'><button onClick={this.props.onClick} style={localStyles.button}> Favourites </button></Link> 
+            <Link to='/search'><button onClick={this.props.onClick} style={localStyles.button}> Discover </button></Link> 
+            <input type="text" name="search" />
         </div>
     );
   }

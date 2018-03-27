@@ -7,14 +7,14 @@ import Header from './components/Header'
 
 import Styles from './styles/baseStyling'
 
-const headingTitle = 'Discover Movies'
+const headingTitle = 'MovieNight'
 
 const App = () => (
   <div className='App' style={localStyles.App}>
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500:700" rel="stylesheet"/>
   <Header header={headingTitle}/>
     <Switch>
-      <Route exact path='/' component={MovieList}/>
+      <Route exact path='/search' component={MovieList}/>
       <Route exact path='/favourites' component={FavouritesList}/>
     </Switch>
   </div>
