@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import MovieList from './containers/MovieList'
 import FavouritesList from './containers/FavouritesList'
-import Header from './components/Header'
+import Header from './containers/Header'
 
 import Styles from './styles/baseStyling'
 
@@ -14,7 +14,7 @@ const App = () => (
   <link href="https://fonts.googleapis.com/css?family=Quicksand:500:700" rel="stylesheet"/>
   <Header header={headingTitle}/>
     <Switch>
-      <Route exact path='/search' component={MovieList}/>
+      <Route exact path='/discover' component={MovieList}/>
       <Route exact path='/favourites' component={FavouritesList}/>
     </Switch>
   </div>
