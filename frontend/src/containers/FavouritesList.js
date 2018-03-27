@@ -73,13 +73,6 @@ export default FavouritesList;
 
 const localStyles = { 
     Favourites: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        padding: 40,
-        position: 'absolute',
-        top: 0,
-        right: 0 ,
-        backgroundColor: Styles.colours.primary,
+ 
     }
   }

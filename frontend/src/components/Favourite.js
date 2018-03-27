@@ -19,37 +19,6 @@ export default Favourite;
 
 const localStyles = { 
   FavouritesList: {
-    width: '16%',
-    position: 'relative',
-    left: 45,
-    marginTop: '10%',
-    marginBottom: '10.6%',
-    padding: 20,
-    borderRadius: 5, 
-    backgroundColor: Styles.colours.third
-  },
-  detailBox: {
-    marginTop: 15
-  },
-  image: {
-    borderRadius: 20, 
-    boxShadow: '0px 10px 5px' + Styles.colours.third,
-  },
-  title: {
-    fontSize: 15,
-    color: Styles.colours.white 
-  },
-  button: {
-    outline: 'none',
-    padding: 10, 
-    fontSize: 13,
-    borderRadius: 10, 
-    width: '60%',
-    color: Styles.colours.white, 
-    fontWeight: '600', 
-    background: 'linear-gradient(to left,'+ Styles.colours.yellow + ','  + Styles.colours.darkyellow + ')',
-    marginLeft: 45,
-    marginTop: 20,
-    border: 'none',
+    border: '2px solid red'
   }
 }

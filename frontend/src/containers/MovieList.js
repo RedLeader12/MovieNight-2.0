@@ -87,13 +87,13 @@ export default MovieList;
 
 const localStyles = { 
     MovieList: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        padding: '100px 200px',
-        position: 'absolute',
-        top: 0, 
-        right: 0,
-        backgroundColor: Styles.colours.primary,
+        // display: 'flex',
+        // flexDirection: 'row',
+        // flexWrap: 'wrap',
+        // padding: '100px 200px',
+        // position: 'absolute',
+        // top: 0, 
+        // right: 0,
+        // backgroundColor: Styles.colours.primary,
     },
 }
