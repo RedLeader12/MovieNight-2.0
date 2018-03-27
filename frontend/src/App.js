@@ -7,7 +7,7 @@ import Header from './components/Header'
 
 import Styles from './styles/baseStyling'
 
-const headingTitle = 'MovieNight'
+const headingTitle = 'Discover Movies'
 
 const App = () => (
   <div className='App' style={localStyles.App}>
