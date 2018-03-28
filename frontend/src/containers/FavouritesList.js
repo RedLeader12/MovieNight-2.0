@@ -56,6 +56,7 @@ render() {
         title={movie.title}
         posterPath={"https://image.tmdb.org/t/p/w200"+ movie.poster_path}
         onClick={() => this.deleteFavouriteHandler(index)}
+        posterStyle = {Styles.imageStyle}
         /> 
     ))
 
