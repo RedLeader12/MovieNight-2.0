@@ -9,6 +9,8 @@ const COLOURS = {
     darkyellow: "#e5b243"
   }
 
+  //fontsize: 15, 
+
   module.exports = {
    colours: COLOURS,
    imageStyle: {
@@ -31,11 +33,16 @@ const COLOURS = {
      marginLeft: '20%'
    },
    like: {
-    backgroundColor: "#ecc044",
+    backgroundColor: "#161c24",
     borderRadius: 1000, 
-    padding: '8px 10px', 
-    fontSize: 14, 
+    padding: '8px 10.5px', 
+    fontSize: 15, 
     color: 'white',
-    marginLeft: '5%'
+    marginLeft: '5%',
+    border: 'none', 
+    outline: 'none',
+    ':hover': {
+      backgroundColor: "#ecc044"
+    }
    }
   }

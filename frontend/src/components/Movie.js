@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import MoviesList from '../containers/MovieList';
 import Styles from '../styles/baseStyling'
+import Radium from 'radium';
 
-class Movie extends Component {
+class Movie extends React.Component {
   render () {
     return (
         <div className="Movie" style={localStyles.Movie}>
@@ -26,7 +27,7 @@ class Movie extends Component {
     );
   }
 }
-export default Movie;
+export default Radium(Movie);
 
 const localStyles = { 
   Movie: {

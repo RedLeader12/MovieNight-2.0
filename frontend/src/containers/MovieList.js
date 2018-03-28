@@ -113,7 +113,7 @@ render() {
 
     return (
         <div >
-        <input type="text" name="search" onChange={this.searchInputHandler}/>
+        <input type="text" name="search" onChange={this.searchInputHandler} style={localStyles.search}/>
         <div className="MovieList" style={localStyles.MovieList}> 
             {movies}
         </div> 
@@ -129,7 +129,7 @@ const localStyles = {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        padding: 150, 
+        padding: 170, 
         backgroundColor: Styles.colours.primary,
         border: '2px solid green',
         position: 'absolute',
@@ -137,4 +137,10 @@ const localStyles = {
         left: 0,
         zIndex: -1000
     },
+    search: {
+        position: 'relative',
+        top: 30,
+        left: '40%',
+        width: 300
+    }
   }
