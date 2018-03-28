@@ -39,11 +39,37 @@ componentDidMount() {
         });
 }
 
+componentDidUpdate() {
+    let self=this;
+    if(this.state.search.length > 0){
+        window.fetch(config.queryApi + this.state.search + '&page=1')
+        .then(function(results) {
+        return results.json();
+        })
+        .then(function(data){
+            console.log(data.results)
+            let final = data.results
+            final.map(movie => {
+                let number = movie.popularity
+                movie.popularity = Math.round( number * 10 ) / 10;
+                return movie 
+            })
+            self.setState({
+            moviesList: final
+            })
+        })
+        .catch(function(error) {
+        console.log(error)
+        }); 
+    }
+}
+
 searchInputHandler = (event) => {
     let string = event.target.value
     let changedString = string.split(' ').join('20%')
-    this.setState({ search: changedString})  
-  }  
+    this.setState({ search: changedString}) 
+    console.log(this.state.search)
+  }
 
 favouriteSelectHandler = (index) => {
     let selected = this.state.moviesList[index]
@@ -82,7 +108,7 @@ render() {
     ))
 
     return (
-        <div className="MovieList" style={localStyles.MovieList}>
+        <div className="MovieList">
         <input type="text" name="search" onChange={this.searchInputHandler}/>
             {movies}
         </div>
@@ -91,16 +117,3 @@ render() {
 }
     
 export default MovieList;
-
-const localStyles = { 
-    MovieList: {
-        // display: 'flex',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap',
-        // padding: '100px 200px',
-        // position: 'absolute',
-        // top: 0, 
-        // right: 0,
-        // backgroundColor: Styles.colours.primary,
-    },
-}
