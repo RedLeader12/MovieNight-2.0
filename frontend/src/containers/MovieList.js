@@ -40,8 +40,9 @@ componentDidMount() {
 }
 
 searchInputHandler = (event) => {
-    this.setState({ search: event.target.value})
-    console.log(this.state.search)
+    let string = event.target.value
+    let changedString = string.(' ').join('20%')
+    this.setState({ search: changedString})  
   }  
 
 favouriteSelectHandler = (index) => {
