@@ -125,7 +125,10 @@ const localStyles = {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        padding: 30, 
-        border: '2px solid green'
+        padding: 120, 
+        border: '2px solid green',
+        position: 'absolute',
+        top: 0, 
+        left: 0 
     },
   }
