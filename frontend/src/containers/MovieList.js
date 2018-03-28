@@ -39,6 +39,11 @@ componentDidMount() {
         });
 }
 
+searchInputHandler = (event) => {
+    this.setState({ search: event.target.value})
+    console.log(this.state.search)
+  }  
+
 favouriteSelectHandler = (index) => {
     let selected = this.state.moviesList[index]
 
@@ -77,7 +82,7 @@ render() {
 
     return (
         <div className="MovieList" style={localStyles.MovieList}>
-        <br style={localStyles.background}/> 
+        <input type="text" name="search" onChange={this.searchInputHandler}/>
             {movies}
         </div>
     );

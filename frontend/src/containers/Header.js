@@ -12,10 +12,6 @@ class Header extends Component {
         }
     }
 
-searchInputHandler = (event) => {
-  this.setState({ search: event.target.value})
-  console.log(this.state.search)
-}
 
   render () {
     return (
@@ -24,7 +20,6 @@ searchInputHandler = (event) => {
             <Link to='/favourites'><button onClick={this.props.onClick} style={localStyles.button}> Favourites </button></Link> 
             <Link to='/discover'><button onClick={this.props.onClick} style={localStyles.button}> Discover </button></Link> 
             <span> {this.state.search} </span> 
-            <input type="text" name="search" onChange={this.searchInputHandler}/>
         </div>
     );
   }
