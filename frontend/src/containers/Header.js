@@ -28,6 +28,7 @@ export default Header;
 
 const localStyles = { 
   Header: {
-    border: '2px solid red'
+    border: '2px solid red',
+    height: 90
   }
 }
