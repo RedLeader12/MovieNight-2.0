@@ -6,11 +6,13 @@ class Movie extends Component {
   render () {
     return (
         <div className="Movie" style={localStyles.Movie}>
-            <img id="posterPath" style={localStyles.poster} src={this.props.posterPath}/>
-              <h2 id="title" style={localStyles.title} >{this.props.title}</h2>
+            <img id="posterPath" style={this.props.posterStyle} src={this.props.posterPath}/>
+              <h2 id="title" style={this.props.titleStyle} >{this.props.title}</h2>
+
               <div style={localStyles.detailBox}> 
               <span style={localStyles.voteAverage} >{this.props.voteAverage} </span>
-              <button onClick={this.props.onClick} style={localStyles.button}> Favour Movie </button> 
+              <button onClick={this.props.onClick} style={this.props.buttonStyle}> More Info </button> 
+              <button onClick={this.props.onClick} style={this.props.likeStyle}> ♥ </button> 
               </div> 
               <div style={localStyles.overviewBox}> 
               <div style={localStyles.descriptionBox}> 
@@ -33,10 +35,14 @@ const localStyles = {
     padding: 20,
     border: '2px solid blue'
   },
-  // poster: {
-  //   borderRadius: 20, 
-  //   boxShadow: '0px 10px 5px' + Styles.colours.third,
-  // },
+  detailBox: {
+    border: '2px solid red',
+    padding: '15px 10px', 
+  },
+  voteAverage: {
+    color: Styles.colours.white 
+  }
+
   // detailBox: {
   //   padding: 10
   // },
