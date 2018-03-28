@@ -1,4 +1,5 @@
 {
   "api": "https://api.themoviedb.org/3/movie/top_rated?api_key=121486b23802e0b6735125ff1892f340&language=en-US&page=1",
-  "database": "http://localhost:3002/api/v1/favouritemovies"
+  "database": "http://localhost:3002/api/v1/favouritemovies",
+  "queryApi" : "https://api.themoviedb.org/3/search/movie?api_key=121486b23802e0b6735125ff1892f340&language=en-US&query="
 }
