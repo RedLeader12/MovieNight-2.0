@@ -41,7 +41,7 @@ componentDidMount() {
 
 searchInputHandler = (event) => {
     let string = event.target.value
-    let changedString = string.(' ').join('20%')
+    let changedString = string.split(' ').join('20%')
     this.setState({ search: changedString})  
   }  
 
