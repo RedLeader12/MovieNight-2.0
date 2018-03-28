@@ -19,6 +19,6 @@ export default Favourite;
 
 const localStyles = { 
   FavouritesList: {
-    // border: '2px solid red'
+    border: '2px solid red'
   }
 }

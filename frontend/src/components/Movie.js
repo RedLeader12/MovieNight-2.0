@@ -27,11 +27,12 @@ class Movie extends Component {
 export default Movie;
 
 const localStyles = { 
-  // Movie: {
-  //   flex: 2, 
-  //   position: 'relative',
-  //   padding: 22,
-  // },
+  Movie: {
+    flex: 5, 
+    position: 'relative',
+    padding: 20,
+    border: '2px solid blue'
+  },
   // poster: {
   //   borderRadius: 20, 
   //   boxShadow: '0px 10px 5px' + Styles.colours.third,

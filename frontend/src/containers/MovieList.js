@@ -108,12 +108,24 @@ render() {
     ))
 
     return (
-        <div className="MovieList">
+        <div >
         <input type="text" name="search" onChange={this.searchInputHandler}/>
+        <div className="MovieList" style={localStyles.MovieList}> 
             {movies}
+        </div> 
         </div>
     );
   }
 }
     
 export default MovieList;
+
+const localStyles = { 
+    MovieList: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        padding: 30, 
+        border: '2px solid green'
+    },
+  }

@@ -62,7 +62,7 @@ render() {
     console.log(favourites)
 
     return (
-        <div className="Favourites" style={localStyles.Favourites}>
+        <div className="Favourites" style={localStyles.FavouritesList}>
         {favourites}
         </div>
     );
@@ -72,7 +72,11 @@ render() {
 export default FavouritesList;
 
 const localStyles = { 
-    Favourites: {
- 
+    FavouritesList: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        padding: 30, 
+        border: '2px solid green'
     }
   }
