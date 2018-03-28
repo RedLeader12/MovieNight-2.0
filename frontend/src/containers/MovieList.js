@@ -104,6 +104,10 @@ render() {
         posterPath={"https://image.tmdb.org/t/p/w200"+ movie.poster_path}
         popularity={movie.popularity}
         onClick={() => this.favouriteSelectHandler(index)}
+        posterStyle={Styles.imageStyle}
+        titleStyle={Styles.titleStyles}
+        buttonStyle={Styles.button}
+        likeStyle = {Styles.like}
         /> 
     ))
 
@@ -125,10 +129,12 @@ const localStyles = {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        padding: 120, 
+        padding: 150, 
+        backgroundColor: Styles.colours.primary,
         border: '2px solid green',
         position: 'absolute',
         top: 0, 
-        left: 0 
+        left: 0,
+        zIndex: -1000
     },
   }
