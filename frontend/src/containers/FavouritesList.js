@@ -59,21 +59,13 @@ render() {
     console.log(favourites)
 
     return (
-        <div className="Favourites" style={localStyles.FavouritesList}>
+        <div style={Styles.Favouritesbackground}> 
+        <div className="Favourites" style={Styles.baseGrid}>
         {favourites}
         </div>
+        </div> 
     );
   }
 }
     
 export default FavouritesList;
-
-const localStyles = { 
-    // FavouritesList: {
-    //     display: 'flex',
-    //     flexDirection: 'row',
-    //     flexWrap: 'wrap',
-    //     padding: 30, 
-    //     border: '2px solid green'
-    // }
-  }

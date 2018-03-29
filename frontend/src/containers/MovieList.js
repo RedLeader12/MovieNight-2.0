@@ -12,6 +12,7 @@ class MovieList extends Component {
         this.state = {
         moviesList: [],
         search: '',
+        overview: '',
         show: false 
         }
     }
@@ -92,9 +93,9 @@ favouriteSelectHandler = (index) => {
 
 descriptionShowHandler = (index) => {
     let show = this.state.show
+    let selected = this.state.moviesList[index]
     this.setState({ show: !show })
-    console.log(this.state.show)
-}
+    }
 
 render() {
 
@@ -108,13 +109,17 @@ render() {
         popularity={movie.popularity}
         onClickDescription = {() => this.descriptionShowHandler(index)}
         onClickLike={() => this.favouriteSelectHandler(index)}
+        posterStyle={Styles.poster}
+        buttonStyle={Styles.button}
         /> 
     ))
 
     return (
-        <div >
+        <div style={Styles.background}>
+        <div style={localStyles.searchBox}> 
         <input type="text" name="search" onChange={this.searchInputHandler} style={localStyles.search}/>
-        <div className="MovieList" style={localStyles.MovieList}> 
+        </div> 
+        <div className="MovieList" style={Styles.baseGrid}> 
             {movies}
         </div> 
         </div>
@@ -125,22 +130,16 @@ render() {
 export default MovieList;
 
 const localStyles = { 
-    // MovieList: {
-    //     display: 'flex',
-    //     flexDirection: 'row',
-    //     flexWrap: 'wrap',
-    //     padding: 170, 
-    //     backgroundColor: Styles.colours.primary,
-    //     border: '2px solid green',
-    //     position: 'absolute',
-    //     top: 0, 
-    //     left: 0,
-    //     zIndex: -1000
-    // },
-    // search: {
-    //     position: 'relative',
-    //     top: 30,
-    //     left: '40%',
-    //     width: 300
-    // }
+    searchBox: {
+        width: '18%',
+        position: 'absolute',
+        top: '4.4%',
+        left: '52%'
+    },
+    search: {
+        width: 250,
+        padding: 5, 
+        fontSize: 15,
+        outline: 'none'
+    }
   }

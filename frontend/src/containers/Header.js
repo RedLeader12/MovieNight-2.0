@@ -28,28 +28,21 @@ class Header extends Component {
 export default Header;
 
 const localStyles = { 
-  Header: {
-    border: '0.1px solid red',
-    height: 90
-  },
   title: {
-    color: Styles.colours.white, 
-    fontSize: 45,
+    fontSize: 35,
     position: 'absolute',
-    top: 25, 
-    left: '41%',
+    left: '43%',
+    top: '5%'
   },
   detailBox: {
-    border: '2px solid red',
+    width: 180, 
+    padding: 10,
     position: 'absolute',
-    top: '14%', 
-    left: '45%',
+    top: '16%',
+    left: '35%',
+    fontSize: 15
   },
   favourite: {
-    color: Styles.colours.white
-  },
-  discover: {
-    color: Styles.colours.white ,
-    marginLeft: 5, 
+    marginLeft: 25
   }
 }

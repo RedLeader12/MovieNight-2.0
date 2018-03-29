@@ -13,36 +13,42 @@ const COLOURS = {
 
   module.exports = {
    colours: COLOURS,
-  //  imageStyle: {
-  //   boxShadow: '0px 10px 5px #14171f',
-  //   borderRadius: 20,
-  //   marginLeft: 20
-  //  },
-  //  titleStyles: {
-  //    color: 'white', 
-  //    fontSize: 15 
-  //  },
-  //  button: {
-  //    backgroundColor: "#ecc044",
-  //    color: "#eeeeef",
-  //    padding: '10px 20px', 
-  //    borderRadius: 20, 
-  //    border: 'none', 
-  //    outline: 'none', 
-  //    fontWeight: '600',
-  //    marginLeft: '20%'
-  //  },
-  //  like: {
-  //   backgroundColor: "#161c24",
-  //   borderRadius: 1000, 
-  //   padding: '8px 10.5px', 
-  //   fontSize: 15, 
-  //   color: 'white',
-  //   marginLeft: '5%',
-  //   border: 'none', 
-  //   outline: 'none',
-  //   ':hover': {
-  //     backgroundColor: "#ecc044"
-  //   }
-  //  }
+   background: {
+    border: '2px solid red',
+    position: 'absolute',
+    top: 0, 
+    left: 0,
+    zIndex: -1000,
+    width: '100vw',
+   },
+   Favouritesbackground: {
+    border: '2px solid red',
+    position: 'absolute',
+    top: 0, 
+    left: 0,
+    zIndex: -1000,
+    width: '100vw',
+    height: '100vh'
+   },
+   baseGrid: {
+    display: 'flex',
+    flexDiretion: 'row',
+    flexWrap: 'wrap',
+    border: '2px solid green',
+    marginTop: 150, 
+    padding: '0px 50px'
+   },
+   button: {
+    outline: 'none',
+    border: 'none',
+    background: '#ecc044',
+    padding: 12, 
+    borderRadius: 20, 
+    color: 'white',
+    fontSize: 15,
+    fontWeight: 600,
+    marginLeft: 77
+
+   }
+  
   }

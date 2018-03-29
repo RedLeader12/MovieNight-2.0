@@ -5,7 +5,7 @@ import Styles from '../styles/baseStyling'
 class Favourite extends Component {
   render () {
     return (
-        <div className="FavouritesList" style={localStyles.FavouritesList}>
+        <div className="FavouritesList" style={localStyles.Favourites}>
             <img style={this.props.posterStyle} src={this.props.posterPath} /> 
             <div style={localStyles.detailBox}> 
             <span style={localStyles.title} id="title"> {this.props.title} </span>
@@ -19,8 +19,9 @@ class Favourite extends Component {
 export default Favourite;
 
 const localStyles = { 
-  // FavouritesList: {
-  //   border: '2px solid red',
-  //   padding: 20,
-  // }
+  Favourites: {
+    width: 200,
+    padding: '20px 30px',
+    border: '2px solid red',
+  }
 }
