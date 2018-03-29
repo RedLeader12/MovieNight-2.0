@@ -10,18 +10,12 @@ class Movie extends React.Component {
             <img id="posterPath" style={this.props.posterStyle} src={this.props.posterPath}/>
               <h2 id="title" style={this.props.titleStyle} >{this.props.title}</h2>
 
-              <div style={localStyles.detailBox}> 
               <span style={localStyles.voteAverage} >{this.props.voteAverage} </span>
-              <button onClick={this.props.onClick} style={this.props.buttonStyle}> More Info </button> 
-              <button onClick={this.props.onClick} style={this.props.likeStyle}> ♥ </button> 
-              </div> 
-              <div style={localStyles.overviewBox}> 
-              <div style={localStyles.descriptionBox}> 
+              <button   onClick={this.props.onClickDescription} style={this.props.buttonStyle}> More Info </button> 
+              <button onClick={this.props.onClickLike} style={this.props.likeStyle}> ♥ </button> 
+
               <span style={localStyles.description} > Description: </span>
-              </div> 
-              <br style={localStyles.spacing}/> 
               <span id="overview" style={localStyles.overview}>{this.props.overview} </span>
-              </div> 
               < br/> 
         </div>
     );
@@ -30,19 +24,19 @@ class Movie extends React.Component {
 export default Radium(Movie);
 
 const localStyles = { 
-  Movie: {
-    flex: 5, 
-    position: 'relative',
-    padding: 20,
-    border: '2px solid blue'
-  },
-  detailBox: {
-    border: '2px solid red',
-    padding: '15px 10px', 
-  },
-  voteAverage: {
-    color: Styles.colours.white 
-  }
+  // Movie: {
+  //   flex: 5, 
+  //   position: 'relative',
+  //   padding: 20,
+  //   border: '2px solid blue'
+  // },
+  // detailBox: {
+  //   border: '2px solid red',
+  //   padding: '15px 10px', 
+  // },
+  // voteAverage: {
+  //   color: Styles.colours.white 
+  // }
 
   // detailBox: {
   //   padding: 10

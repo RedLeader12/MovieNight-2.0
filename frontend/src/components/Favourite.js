@@ -19,8 +19,8 @@ class Favourite extends Component {
 export default Favourite;
 
 const localStyles = { 
-  FavouritesList: {
-    border: '2px solid red',
-    padding: 20,
-  }
+  // FavouritesList: {
+  //   border: '2px solid red',
+  //   padding: 20,
+  // }
 }

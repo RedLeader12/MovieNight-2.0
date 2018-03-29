@@ -18,8 +18,8 @@ class Header extends Component {
         <div className="Header" style={localStyles.Header}>
             <span style={localStyles.title}> {this.props.header} </span> 
             <div style={localStyles.detailBox}> 
-            <Link to='/favourites'><span style={localStyles.favourite}> Favourites </span></Link> 
             <Link to='/discover'><span style={localStyles.discover}> Discover </span></Link> 
+            <Link to='/favourites'><span style={localStyles.favourite}> Favourites </span></Link> 
             </div> 
         </div>
     );

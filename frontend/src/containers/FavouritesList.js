@@ -69,11 +69,11 @@ render() {
 export default FavouritesList;
 
 const localStyles = { 
-    FavouritesList: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        padding: 30, 
-        border: '2px solid green'
-    }
+    // FavouritesList: {
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    //     flexWrap: 'wrap',
+    //     padding: 30, 
+    //     border: '2px solid green'
+    // }
   }

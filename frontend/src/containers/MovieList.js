@@ -11,7 +11,8 @@ class MovieList extends Component {
     super(props)
         this.state = {
         moviesList: [],
-        search: ''
+        search: '',
+        show: false 
         }
     }
 
@@ -68,7 +69,6 @@ searchInputHandler = (event) => {
     let string = event.target.value
     let changedString = string.split(' ').join('20%')
     this.setState({ search: changedString}) 
-    console.log(this.state.search)
   }
 
 favouriteSelectHandler = (index) => {
@@ -87,10 +87,13 @@ favouriteSelectHandler = (index) => {
       })
       .catch(function (error) {
         console.log(error);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-        console.log(error.config);
       });
+}
+
+descriptionShowHandler = (index) => {
+    let show = this.state.show
+    this.setState({ show: !show })
+    console.log(this.state.show)
 }
 
 render() {
@@ -103,11 +106,8 @@ render() {
         voteAverage={movie.vote_average}
         posterPath={"https://image.tmdb.org/t/p/w200"+ movie.poster_path}
         popularity={movie.popularity}
-        onClick={() => this.favouriteSelectHandler(index)}
-        posterStyle={Styles.imageStyle}
-        titleStyle={Styles.titleStyles}
-        buttonStyle={Styles.button}
-        likeStyle = {Styles.like}
+        onClickDescription = {() => this.descriptionShowHandler(index)}
+        onClickLike={() => this.favouriteSelectHandler(index)}
         /> 
     ))
 
@@ -125,22 +125,22 @@ render() {
 export default MovieList;
 
 const localStyles = { 
-    MovieList: {
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        padding: 170, 
-        backgroundColor: Styles.colours.primary,
-        border: '2px solid green',
-        position: 'absolute',
-        top: 0, 
-        left: 0,
-        zIndex: -1000
-    },
-    search: {
-        position: 'relative',
-        top: 30,
-        left: '40%',
-        width: 300
-    }
+    // MovieList: {
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    //     flexWrap: 'wrap',
+    //     padding: 170, 
+    //     backgroundColor: Styles.colours.primary,
+    //     border: '2px solid green',
+    //     position: 'absolute',
+    //     top: 0, 
+    //     left: 0,
+    //     zIndex: -1000
+    // },
+    // search: {
+    //     position: 'relative',
+    //     top: 30,
+    //     left: '40%',
+    //     width: 300
+    // }
   }
