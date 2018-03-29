@@ -33,18 +33,14 @@ componentDidMount() {
 
 deleteFavouriteHandler = (index) => {
     let selected = this.state.favourites[index]
-    console.log(index)
-    console.log(selected.id)
+    this.state.favourites.splice(index, 1)
+    this.setState({favourites: this.state.favourites})
     axios.delete(config.database + '/' + selected.id)
       .then(res => {
         console.log(res);
       })
       .catch(function (error) {
         console.log(error);
-        console.log(error.response);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-        console.log(error.config);
       });
 }
 
