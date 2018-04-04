@@ -4,7 +4,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 import Styles from '../styles/baseStyling'
-import Movie from '../components/Movie.js'
+import Movie from '../containers/Movie.js'
 
 class MovieList extends Component {
     constructor(props) {
@@ -130,16 +130,16 @@ render() {
 export default MovieList;
 
 const localStyles = { 
-    searchBox: {
-        width: 300,
-        position: 'absolute',
-        left: '80%',
-        marginTop:  47
-    },
-    search: {
-        width: 250,
-        padding: 5,
-        outline: 'none'    
-    }
+    // searchBox: {
+    //     width: 300,
+    //     position: 'absolute',
+    //     left: '80%',
+    //     marginTop:  47
+    // },
+    // search: {
+    //     width: 250,
+    //     padding: 5,
+    //     outline: 'none'    
+    // }
 
   }

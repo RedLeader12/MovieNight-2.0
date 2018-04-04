@@ -3,7 +3,7 @@ import config from '../config.json'
 import axios from 'axios'
 
 import Styles from '../styles/baseStyling'
-import Favourite from '../components/Favourite.js'
+import Favourite from '../containers/Favourite.js'
 
 class FavouritesList extends Component {
     constructor(props) {

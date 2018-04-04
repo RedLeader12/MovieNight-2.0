@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FavouritesList from '../containers/FavouritesList';
+import FavouritesList from '../controllers/FavouritesList';
 import Styles from '../styles/baseStyling'
 
 class Favourite extends Component {
@@ -21,12 +21,18 @@ class Favourite extends Component {
 export default Favourite;
 
 const localStyles = { 
-  Favourites: {
-    width: 200,
-    padding: '20px 35px',
-    border: '2px solid red',
-  },
-  button: {
-    border: '1px solid blue'
-  }
+  // Favourites: {
+  //   width: 200,
+  //   padding: '20px 35px',
+  //   border: '2px solid red',
+  //   background: Styles.colours.dark
+  // },
+  // title: {
+  //   color: Styles.colours.white
+  // },
+  // button: {
+  //   border: '1px solid blue',
+  //   marginTop: 30,
+
+  // }
 }

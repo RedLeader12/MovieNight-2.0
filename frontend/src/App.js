@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import MovieList from './containers/MovieList'
-import FavouritesList from './containers/FavouritesList'
-import Header from './containers/Header'
+import MovieList from './controllers/MovieList'
+import FavouritesList from './controllers/FavouritesList'
+import Header from './controllers/Header'
 
 import Styles from './styles/baseStyling'
 

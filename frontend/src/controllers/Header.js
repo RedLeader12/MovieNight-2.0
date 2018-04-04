@@ -28,24 +28,24 @@ class Header extends Component {
 export default Header;
 
 const localStyles = { 
-  title: {
-    fontSize: 35,
-    position: 'absolute',
-    left: '4%',
-    top: '5%'
-  },
-  detailBox: {
-    border: '1px solid blue',
-    padding: 10,
-    display: 'flex',
-    justifyContent: 'center ',
-    position: 'absolute',
-        top: '9%',
-        left: '50%',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
-  },
-  favourite: {
-    marginLeft: 25,   
-  }
+  // title: {
+  //   fontSize: 35,
+  //   position: 'absolute',
+  //   left: '4%',
+  //   top: '5%'
+  // },
+  // detailBox: {
+  //   border: '1px solid blue',
+  //   padding: 10,
+  //   display: 'flex',
+  //   justifyContent: 'center ',
+  //   position: 'absolute',
+  //       top: '9%',
+  //       left: '50%',
+  //       marginRight: '-50%',
+  //       transform: 'translate(-50%, -50%)'
+  // },
+  // favourite: {
+  //   marginLeft: 25,   
+  // }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MoviesList from '../containers/MovieList';
+import MoviesList from '../controllers/MovieList';
 import Styles from '../styles/baseStyling'
 import Radium from 'radium';
 
@@ -25,39 +25,39 @@ class Movie extends React.Component {
 export default Radium(Movie);
 
 const localStyles = { 
-  Movie: {
-    flex: 5, 
-    padding: '20px 35px',
-    border: '2px solid blue'
-  },
-  detailBox: {
-    border: '1px solid blue'
-  },
-  poster: {
-    position: 'relative',
-    left: '10%',
-    height: 300, 
-  },
-  title: {
-    border: '1px solid blue',
-    fontSize: 15,
-    height: 40,
-    textAlign: 'center'
-  },
-  likeButton: {
-    outline: 'none',
-    border: 'none',
-    background: Styles.colours.third, 
-    borderRadius: 100, 
-    height: 40,
-    width: 40,
-    fontSize: 15, 
-    color: Styles.colours.white,
-    marginLeft: 10,
-    transformProperty: 'fontSize',
-    ':hover':{
-      fontSize: 20,
-      background: Styles.colours.yellow
-    }
-  }
+  // Movie: {
+  //   flex: 5, 
+  //   padding: '20px 35px',
+  //   border: '2px solid blue'
+  // },
+  // detailBox: {
+  //   border: '1px solid blue'
+  // },
+  // poster: {
+  //   position: 'relative',
+  //   left: '10%',
+  //   height: 300, 
+  // },
+  // title: {
+  //   border: '1px solid blue',
+  //   fontSize: 15,
+  //   height: 40,
+  //   textAlign: 'center'
+  // },
+  // likeButton: {
+  //   outline: 'none',
+  //   border: 'none',
+  //   background: Styles.colours.third, 
+  //   borderRadius: 100, 
+  //   height: 40,
+  //   width: 40,
+  //   fontSize: 15, 
+  //   color: Styles.colours.white,
+  //   marginLeft: 10,
+  //   transformProperty: 'fontSize',
+  //   ':hover':{
+  //     fontSize: 20,
+  //     background: Styles.colours.yellow
+  //   }
+  // }
 }
