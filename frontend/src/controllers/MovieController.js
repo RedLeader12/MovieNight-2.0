@@ -3,7 +3,7 @@ import axios from 'axios';
 import qs from 'qs';
 import config from '../config.json';
 
-
+import MovieList from './MovieList';
 import Styles from '../styles/baseStyling';
 
 class MovieController extends Component {
@@ -12,60 +12,32 @@ class MovieController extends Component {
     this.state = {
       moviesList: [],
       favouritesList: [],
+
     };
   }
 
   componentDidMount() {
     const self = this;
 
-    window.fetch(config.api)
-      .then(results => results.json())
-      .then((data) => {
-        console.log(data.results);
-        const final = data.results;
-        self.setState({
-          moviesList: final
-        });
+    axios.get(config.api)
+      .then((res) => {
+        console.log(res.data.results);
+        self.setState({ moviesList: res.data.results });
       })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    window.fetch(config.database)
-      .then(results => results.json())
-      .then((data) => {
-        const final = data.data;
-        self.setState({
-          favouritesList: final
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(err => console.log('---errrr', err));
   }
 
   render() {
+    const list = this.state.moviesList;
+
+
     return (
       <div>
         <p> hello </p>
+        <MovieList list={list} />
       </div>
     );
   }
 }
 
 export default MovieController;
-
-// const localStyles = {
-//     // searchBox: {
-//     //     width: 300,
-//     //     position: 'absolute',
-//     //     left: '80%',
-//     //     marginTop:  47
-//     // },
-//     // search: {
-//     //     width: 250,
-//     //     padding: 5,
-//     //     outline: 'none'
-//     // }
-
-//   }
