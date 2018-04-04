@@ -25,7 +25,19 @@ class MovieController extends Component {
         const final = data.results;
         self.setState({
           moviesList: final
-        })
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    window.fetch(config.database)
+      .then(results => results.json())
+      .then((data) => {
+        const final = data.data;
+        self.setState({
+          favouritesList: final
+        });
       })
       .catch((error) => {
         console.log(error);
