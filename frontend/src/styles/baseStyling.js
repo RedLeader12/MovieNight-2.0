@@ -20,6 +20,7 @@ const COLOURS = {
     left: 0,
     zIndex: -1000,
     width: '100vw',
+    background: "#1f2633"
    },
    Favouritesbackground: {
     border: '2px solid red',
@@ -28,14 +29,15 @@ const COLOURS = {
     left: 0,
     zIndex: -1000,
     width: '100vw',
-    height: '100vh'
+    height: '100vh',
+    background: "#1f2633"
    },
    baseGrid: {
     display: 'flex',
     flexDiretion: 'row',
     flexWrap: 'wrap',
     border: '2px solid green',
-    marginTop: 150, 
+    marginTop: 120, 
     padding: '0px 50px'
    },
    button: {
@@ -47,7 +49,7 @@ const COLOURS = {
     color: 'white',
     fontSize: 15,
     fontWeight: 600,
-    marginLeft: 77
+    marginLeft: 50
 
    }
   

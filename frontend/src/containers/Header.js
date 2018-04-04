@@ -31,18 +31,21 @@ const localStyles = {
   title: {
     fontSize: 35,
     position: 'absolute',
-    left: '43%',
+    left: '4%',
     top: '5%'
   },
   detailBox: {
-    width: 180, 
+    border: '1px solid blue',
     padding: 10,
+    display: 'flex',
+    justifyContent: 'center ',
     position: 'absolute',
-    top: '16%',
-    left: '35%',
-    fontSize: 15
+        top: '9%',
+        left: '50%',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)'
   },
   favourite: {
-    marginLeft: 25
+    marginLeft: 25,   
   }
 }

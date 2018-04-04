@@ -27,7 +27,7 @@ export default Radium(Movie);
 const localStyles = { 
   Movie: {
     flex: 5, 
-    padding: '20px 40px',
+    padding: '20px 35px',
     border: '2px solid blue'
   },
   detailBox: {
@@ -53,6 +53,11 @@ const localStyles = {
     width: 40,
     fontSize: 15, 
     color: Styles.colours.white,
-    marginLeft: 10
+    marginLeft: 10,
+    transformProperty: 'fontSize',
+    ':hover':{
+      fontSize: 20,
+      background: Styles.colours.yellow
+    }
   }
 }

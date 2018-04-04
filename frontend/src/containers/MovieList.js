@@ -131,15 +131,15 @@ export default MovieList;
 
 const localStyles = { 
     searchBox: {
-        width: '18%',
+        width: 300,
         position: 'absolute',
-        top: '4.4%',
-        left: '52%'
+        left: '80%',
+        marginTop:  47
     },
     search: {
         width: 250,
-        padding: 5, 
-        fontSize: 15,
-        outline: 'none'
+        padding: 5,
+        outline: 'none'    
     }
+
   }

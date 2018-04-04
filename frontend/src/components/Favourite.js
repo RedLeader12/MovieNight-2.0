@@ -10,7 +10,9 @@ class Favourite extends Component {
             <div style={localStyles.detailBox}> 
             <span style={localStyles.title} id="title"> {this.props.title} </span>
             <br /> 
-            <button onClick={this.props.onClick} style={localStyles.button}> Delete Movie </button> 
+            <div style={localStyles.button}> 
+            <button onClick={this.props.onClick} style={Styles.button}> Delete Movie </button> 
+            </div> 
             </div> 
         </div>
     );
@@ -21,7 +23,10 @@ export default Favourite;
 const localStyles = { 
   Favourites: {
     width: 200,
-    padding: '20px 30px',
+    padding: '20px 35px',
     border: '2px solid red',
+  },
+  button: {
+    border: '1px solid blue'
   }
 }
