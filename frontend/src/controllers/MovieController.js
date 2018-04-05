@@ -33,7 +33,6 @@ class MovieController extends Component {
 
     return (
       <div>
-        <p> hello </p>
         <MovieList list={list} />
       </div>
     );

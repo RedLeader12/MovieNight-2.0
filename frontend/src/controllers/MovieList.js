@@ -8,21 +8,48 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      show: false,
+      description: ''
     };
+  }
+
+  descriptionShowHandler = (index) => {
+    this.setState({ show: !this.state.show }, function state() {
+      console.log(this.state.show);
+      this.descriptionSelectHandler(index);
+    });
+  }
+
+  descriptionSelectHandler = (index) => {
+    if (this.state.show === true) {
+      const selected = this.props.list[index].overview;
+      this.setState({ description: selected }, function state() {
+        console.log(this.state.description);
+      }); 
+    } else {
+      this.setState({ description: '' }, function state() {
+        console.log(this.state.description);
+      }); 
+    }
   }
 
   render() {
     const list = this.props.list.map((movie, index) => (
       <Movie
-        key={index}
+        key={movie.id}
         movie={movie}
+        index={index}
+        onClickInfo={() => this.descriptionShowHandler(index)}
+        show={this.state.show}
       />
     ));
+
+    const description = this.state.description
 
     return (
       <div>
         {list}
+        {description}
       </div>
     );
   }
