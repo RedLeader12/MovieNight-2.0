@@ -14,7 +14,8 @@ class MovieList extends Component {
     super(props);
     this.state = {
       show: false,
-      description: ''
+      description: '',
+      favourites: []
     };
   }
 
@@ -41,25 +42,6 @@ class MovieList extends Component {
     });
   };
 
-  addMovietoFavouritesHandler = (index) => {
-    const movie = this.props.list[index];
-    axios.post(config.database, {
-      overview: movie.overview,
-      poster_path: movie.poster_path,
-      release_date: movie.release_date,
-      title: movie.title,
-      vote_average: movie.vote_average,
-      popularity: movie.popularity,
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-
   render() {
     let buttonName = null;
     if (this.props.button === 'discover') {
@@ -68,6 +50,7 @@ class MovieList extends Component {
       buttonName = 'Delete';
     }
 
+    
     const list = this.props.list.map((movie, index) => (
       <Movie
         key={movie.id}
@@ -76,7 +59,6 @@ class MovieList extends Component {
         onClickInfo={() => this.descriptionShowHandler(index)}
         show={this.state.show}
         buttonName={buttonName}
-        buttonNameClick={() => this.addMovietoFavouritesHandler(index)}
       />
     ));
 
@@ -90,6 +72,7 @@ class MovieList extends Component {
       overview = null;
     }
 
+    console.log(list)
 
     return (
       <div>

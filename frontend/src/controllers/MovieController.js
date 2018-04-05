@@ -51,7 +51,6 @@ class MovieController extends Component {
     const data = this.state.moviesList;
     this.setState({ selectData: data, show: 'discover' }, function state() {
       console.log(this.state.selectData);
-      console.log(this.state.show);
     });
   }
 
@@ -59,7 +58,6 @@ class MovieController extends Component {
     const data = this.state.favouritesList;
     this.setState({ selectData: data, show: 'favourites' }, function state() {
       console.log(this.state.selectData);
-      console.log(this.state.show);
     });
   }
 
@@ -84,7 +82,7 @@ class MovieController extends Component {
     return (
       <div>
         {header}
-        <MovieList list={list} button={this.state.show} />
+        <MovieList list={list} button={this.state.show} favouritesList={this.state.favouritesList}/>
       </div>
     );
   }
