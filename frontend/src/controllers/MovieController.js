@@ -75,16 +75,10 @@ class MovieController extends Component {
     return (
       <div>
         {header}
-        <MovieList list={list} />
+        <MovieList list={list} button={this.state.show} />
       </div>
     );
   }
 }
 
 export default MovieController;
-
-
-{ /* <Switch>
-      <Route exact path='/discover' component={MovieList}/>
-      <Route exact path='/favourites' component={FavouritesList}/>
-    </Switch> */ }

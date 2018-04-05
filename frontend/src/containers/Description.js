@@ -4,8 +4,8 @@ import MovieList from '../controllers/MovieList';
 
 const Description = props => (
   <div className="Description">
-    <span> {props.overview} </span> 
-    <button onClick={props.onClick}> X </button> 
+    <span> {props.overview} </span>
+    <button onClick={props.onClick}> X </button>
   </div>
 );
 

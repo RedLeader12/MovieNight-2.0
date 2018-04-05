@@ -38,6 +38,13 @@ class MovieList extends Component {
   };
 
   render() {
+    let buttonName = null;
+    if (this.props.button === 'discover') {
+      buttonName = '♥';
+    } else {
+      buttonName = 'Delete';
+    }
+
     const list = this.props.list.map((movie, index) => (
       <Movie
         key={movie.id}
@@ -45,6 +52,7 @@ class MovieList extends Component {
         index={index}
         onClickInfo={() => this.descriptionShowHandler(index)}
         show={this.state.show}
+        buttonName={buttonName}
       />
     ));
 
