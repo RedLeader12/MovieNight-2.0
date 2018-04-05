@@ -4,7 +4,7 @@ import qs from 'qs';
 import config from '../config.json';
 
 import MovieList from './MovieList';
-import Header from '../containers/Header';
+import Header from './Header';
 // import Styles from '../styles/baseStyling';
 
 class MovieController extends Component {
@@ -62,11 +62,10 @@ class MovieController extends Component {
   }
 
   render() {
-    const headingTitle = 'MovieNight ☾';
+ 
 
     const header =
     (<Header
-      title={headingTitle}
       onClickDiscover={this.discoverSelectHandler}
       onClickFavourites={this.favouriteSelectHandler}
     />);

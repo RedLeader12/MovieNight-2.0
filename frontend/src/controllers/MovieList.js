@@ -15,7 +15,6 @@ class MovieList extends Component {
     this.state = {
       show: false,
       description: '',
-      favourites: []
     };
   }
 
