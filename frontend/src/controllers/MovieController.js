@@ -14,6 +14,7 @@ class MovieController extends Component {
       moviesList: [],
       favouritesList: [],
       selectData: [],
+      search: '',
       show: 'discover'
 
     };
@@ -25,7 +26,7 @@ class MovieController extends Component {
     axios.get(config.api)
       .then((res) => {
         const final = res.data.results;
-        this.decimalChangeHandler(final)
+        this.decimalChangeHandler(final);
         self.setState({ moviesList: final });
         console.log(this.state.moviesList);
       })
@@ -39,11 +40,33 @@ class MovieController extends Component {
       .catch(err => console.log('---errrr', err));
   }
 
+  componentDidUpdate() {
+    if (this.state.search.length > 0) {
+      axios.get(`${config.queryApi + this.state.search}&page=1`)
+        .then((res) => {
+          const final = res.data.results;
+          this.decimalChangeHandler(final);
+          this.setState({ moviesList: final });
+          console.log(this.state.moviesList);
+        })
+        .catch(err => console.log('---errrr', err));
+    }
+  }
+
+
   decimalChangeHandler = (list) => {
     list.map((movie) => {
       const number = movie.popularity;
       movie.popularity = Math.round(number * 10) / 10;
       return movie;
+    });
+  }
+
+  searchInputHandler = (event) => {
+    const string = event.target.value;
+    const changedString = string.split(' ').join('20%');
+    this.setState({ search: changedString }, function state() {
+      console.log(this.state.search);
     });
   }
 
@@ -61,13 +84,13 @@ class MovieController extends Component {
     });
   }
 
-  render() {
- 
 
+  render() {
     const header =
     (<Header
       onClickDiscover={this.discoverSelectHandler}
       onClickFavourites={this.favouriteSelectHandler}
+      onChange={this.searchInputHandler}
     />);
 
     let list = null;
@@ -81,7 +104,7 @@ class MovieController extends Component {
     return (
       <div>
         {header}
-        <MovieList list={list} button={this.state.show} favouritesList={this.state.favouritesList}/>
+        <MovieList list={list} button={this.state.show} favouritesList={this.state.favouritesList} />
       </div>
     );
   }

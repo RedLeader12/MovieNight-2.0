@@ -71,8 +71,6 @@ class MovieList extends Component {
       overview = null;
     }
 
-    console.log(list)
-
     return (
       <div>
         {list}
