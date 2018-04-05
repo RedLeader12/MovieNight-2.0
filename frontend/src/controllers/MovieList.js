@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import qs from 'qs';
+import config from '../config.json';
+
 
 import MovieController from './MovieController';
 import Movie from '../containers/Movie';
@@ -37,6 +41,25 @@ class MovieList extends Component {
     });
   };
 
+  addMovietoFavouritesHandler = (index) => {
+    const movie = this.props.list[index];
+    axios.post(config.database, {
+      overview: movie.overview,
+      poster_path: movie.poster_path,
+      release_date: movie.release_date,
+      title: movie.title,
+      vote_average: movie.vote_average,
+      popularity: movie.popularity,
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+
   render() {
     let buttonName = null;
     if (this.props.button === 'discover') {
@@ -53,6 +76,7 @@ class MovieList extends Component {
         onClickInfo={() => this.descriptionShowHandler(index)}
         show={this.state.show}
         buttonName={buttonName}
+        buttonNameClick={() => this.addMovietoFavouritesHandler(index)}
       />
     ));
 

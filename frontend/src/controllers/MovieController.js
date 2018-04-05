@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import qs from 'qs';
 import config from '../config.json';
-import { Switch, Route } from 'react-router-dom';
 
 import MovieList from './MovieList';
 import Header from '../containers/Header';
@@ -25,7 +24,9 @@ class MovieController extends Component {
 
     axios.get(config.api)
       .then((res) => {
-        self.setState({ moviesList: res.data.results });
+        const final = res.data.results;
+        this.decimalChangeHandler(final)
+        self.setState({ moviesList: final });
         console.log(this.state.moviesList);
       })
       .catch(err => console.log('---errrr', err));
@@ -36,6 +37,14 @@ class MovieController extends Component {
         console.log(this.state.favouritesList);
       })
       .catch(err => console.log('---errrr', err));
+  }
+
+  decimalChangeHandler = (list) => {
+    list.map((movie) => {
+      const number = movie.popularity;
+      movie.popularity = Math.round(number * 10) / 10;
+      return movie;
+    });
   }
 
   discoverSelectHandler = () => {
