@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import MovieController from './MovieController';
 import Movie from '../containers/Movie';
+import Description from '../containers/Description';
 import Styles from '../styles/baseStyling';
 
 class MovieList extends Component {
@@ -25,11 +26,11 @@ class MovieList extends Component {
       const selected = this.props.list[index].overview;
       this.setState({ description: selected }, function state() {
         console.log(this.state.description);
-      }); 
+      });
     } else {
       this.setState({ description: '' }, function state() {
         console.log(this.state.description);
-      }); 
+      });
     }
   }
 
@@ -44,12 +45,17 @@ class MovieList extends Component {
       />
     ));
 
-    const description = this.state.description
+    const description =
+      (<Description
+        overview={this.state.description}
+      />);
+
+    const overview = this.state.description;
 
     return (
       <div>
         {list}
-        {description}
+        {overview}
       </div>
     );
   }
