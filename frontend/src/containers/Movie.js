@@ -7,7 +7,8 @@ const Movie = props => (
     <img src={`https://image.tmdb.org/t/p/w200${props.movie.poster_path}`} alt="" />
     <span> {props.movie.vote_average} </span>
     <span> {props.movie.title} </span>
-    <button onClick={props.onClickInfo}> {props.buttonName}</button>
+    <button onClick={props.onClickInfo}> More Info </button>
+    <button> {props.buttonName}</button>
 
   </div>
 );
