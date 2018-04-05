@@ -47,7 +47,6 @@ class MovieController extends Component {
           const final = res.data.results;
           this.decimalChangeHandler(final);
           this.setState({ moviesList: final });
-          console.log(this.state.moviesList);
         })
         .catch(err => console.log('---errrr', err));
     }
