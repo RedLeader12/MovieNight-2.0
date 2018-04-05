@@ -4,7 +4,7 @@ import qs from 'qs';
 import config from '../config.json';
 
 import MovieList from './MovieList';
-import Styles from '../styles/baseStyling';
+// import Styles from '../styles/baseStyling';
 
 class MovieController extends Component {
   constructor(props) {

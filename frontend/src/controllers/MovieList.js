@@ -15,7 +15,7 @@ class MovieList extends Component {
   }
 
   descriptionShowHandler = (index) => {
-    this.setState({ show: !this.state.show }, function state() {
+    this.setState({ show: true }, function state() {
       console.log(this.state.show);
       this.descriptionSelectHandler(index);
     });
@@ -27,12 +27,15 @@ class MovieList extends Component {
       this.setState({ description: selected }, function state() {
         console.log(this.state.description);
       });
-    } else {
-      this.setState({ description: '' }, function state() {
-        console.log(this.state.description);
-      });
     }
   }
+
+  resetDescriptionHandler = () => {
+    this.setState({ description: '', show: false }, function state() {
+      console.log(this.state.description);
+      console.log(this.state.show);
+    });
+  };
 
   render() {
     const list = this.props.list.map((movie, index) => (
@@ -45,12 +48,16 @@ class MovieList extends Component {
       />
     ));
 
-    const description =
-      (<Description
+    let overview = null;
+    if (this.state.show === true) {
+      overview = (<Description
         overview={this.state.description}
+        onClick={this.resetDescriptionHandler}
       />);
+    } else {
+      overview = null;
+    }
 
-    const overview = this.state.description;
 
     return (
       <div>
