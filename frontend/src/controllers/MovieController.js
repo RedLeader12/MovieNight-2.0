@@ -99,13 +99,12 @@ class MovieController extends Component {
 
 
     return (
-      <div>
+      <div style={localStyles.background}>
         {header}
         <MovieList
           list={list}
           button={this.state.show}
           favouritesList={this.state.favouritesList}
-          movieControllerComponent={this}
         />
       </div>
     );
@@ -113,3 +112,14 @@ class MovieController extends Component {
 }
 
 export default MovieController;
+
+const localStyles = {
+  background: {
+    border: '2px solid red',
+    position: 'absolute',
+    width: '100vw',
+    height: '100vh',
+    top: 0,
+    left: 0
+  }
+}

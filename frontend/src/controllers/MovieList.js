@@ -117,7 +117,7 @@ class MovieList extends Component {
     }
 
     return (
-      <div>
+      <div style={localStyles.MovieGrid}>
         {list}
         {overview}
       </div>
@@ -126,3 +126,14 @@ class MovieList extends Component {
 }
 
 export default MovieList;
+
+const localStyles = {
+  MovieGrid: {
+    border: '2px solid blue',
+    display: 'flex',
+    flexDirection: 'row',
+    flexwrap: 'wrap',
+    padding: '0px 80px',
+
+  }
+}
