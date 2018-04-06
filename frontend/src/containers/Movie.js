@@ -11,7 +11,7 @@ const Movie = (props) => {
       <span> {props.movie.vote_average} </span>
       <span> {props.movie.title} </span>
       <button onClick={props.onClickInfo}> More Info </button>
-      <button> {props.buttonName} </button>
+      <button onClick={props.OnClick}> {props.buttonName} </button>
 
     </div>
   );
