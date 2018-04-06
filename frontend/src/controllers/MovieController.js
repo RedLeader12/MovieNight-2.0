@@ -5,7 +5,6 @@ import config from '../config.json';
 
 import MovieList from './MovieList';
 import Header from './Header';
-// import Styles from '../styles/baseStyling';
 
 class MovieController extends Component {
   constructor(props) {

@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import MovieList from '../controllers/MovieList';
+import Picture from '../notfound.jpg';
 
-const Movie = props => (
+const Movie = (props) => {
+  const imageChecker = props.imageChecker(props.movie.poster_path);
 
-  <div className="Movie">
-    <img src={`https://image.tmdb.org/t/p/w200${props.movie.poster_path}`} alt="" />
-    <span> {props.movie.vote_average} </span>
-    <span> {props.movie.title} </span>
-    <button onClick={props.onClickInfo}> More Info </button>
-    <button> {props.buttonName} </button>
+  return (
+    <div className="Movie">
+      <img src={imageChecker} alt="" />
+      <span> {props.movie.vote_average} </span>
+      <span> {props.movie.title} </span>
+      <button onClick={props.onClickInfo}> More Info </button>
+      <button> {props.buttonName} </button>
 
-  </div>
-);
+    </div>
+  );
+};
 
 
 export default Movie;

@@ -3,16 +3,17 @@ import axios from 'axios';
 import qs from 'qs';
 import config from '../config.json';
 
-
+import Picture from '../notfound.jpg';
 import MovieController from './MovieController';
 import Movie from '../containers/Movie';
 import Description from '../containers/Description';
-import Styles from '../styles/baseStyling';
+
 
 class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      checkedList: [],
       show: false,
       description: '',
     };
@@ -41,6 +42,14 @@ class MovieList extends Component {
     });
   };
 
+  imageSelectHandler = (image) => {
+    const imageChecker = image;
+    if (imageChecker === null) {
+      return Picture;
+    }
+    return `https://image.tmdb.org/t/p/w200${imageChecker}`;
+  }
+
   render() {
     let buttonName = null;
     if (this.props.button === 'discover') {
@@ -49,13 +58,13 @@ class MovieList extends Component {
       buttonName = 'Delete';
     }
 
-    
     const list = this.props.list.map((movie, index) => (
       <Movie
         key={movie.id}
         movie={movie}
         index={index}
         onClickInfo={() => this.descriptionShowHandler(index)}
+        imageChecker={this.imageSelectHandler}
         show={this.state.show}
         buttonName={buttonName}
       />
