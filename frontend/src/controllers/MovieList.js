@@ -4,7 +4,6 @@ import qs from 'qs';
 import config from '../config.json';
 
 import Picture from '../notfound.jpg';
-import MovieController from './MovieController';
 import Movie from '../containers/Movie';
 import Description from '../containers/Description';
 
@@ -68,6 +67,7 @@ class MovieList extends Component {
         .catch((error) => {
           console.log(error);
         });
+      this.forceUpdate();
     }
 
     if (this.props.button === 'favourites') {
@@ -79,6 +79,7 @@ class MovieList extends Component {
         .catch((error) => {
           console.log(error);
         });
+      this.forceUpdate();
       return this.props.list;
     }
   }

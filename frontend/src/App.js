@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-
-
+import React from 'react';
 import MovieController from './controllers/MovieController';
-import Styles from './styles/baseStyling';
+
+const localStyles = {
+  App: {
+    fontFamily: 'QuickSand, sans-serif'
+  },
+};
 
 const App = () => (
   <div className="App" style={localStyles.App}>
@@ -12,9 +15,3 @@ const App = () => (
 );
 
 export default App;
-
-const localStyles = {
-  App: {
-    fontFamily: 'QuickSand, sans-serif'
-  },
-};

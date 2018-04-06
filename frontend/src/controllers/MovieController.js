@@ -51,7 +51,6 @@ class MovieController extends Component {
     }
   }
 
-
   decimalChangeHandler = (list) => {
     list.map((movie) => {
       const number = movie.popularity;
@@ -102,7 +101,12 @@ class MovieController extends Component {
     return (
       <div>
         {header}
-        <MovieList list={list} button={this.state.show} favouritesList={this.state.favouritesList} />
+        <MovieList
+          list={list}
+          button={this.state.show}
+          favouritesList={this.state.favouritesList}
+          movieControllerComponent={this}
+        />
       </div>
     );
   }
