@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import MovieList from '../controllers/MovieList';
 import Picture from '../notfound.jpg';
 import Styles from '../styles/baseStyling'
+import Radium from 'radium';
 
-const Movie = (props) => {
-  const imageChecker = props.imageChecker(props.movie.poster_path);
 
-  return (
-    <div style={localStyles.margin}> 
+class Movie extends React.Component {
+
+  render() {
+
+    const imageChecker = this.props.imageChecker(this.props.movie.poster_path);
+
+    return (
+      <div style={localStyles.margin}> 
     <div className="Movie" style={localStyles.Movie}>
 
     <div style={localStyles.imageCrop}> 
@@ -16,15 +21,15 @@ const Movie = (props) => {
 
     <div style={localStyles.info}> 
       <div style={localStyles.title}> 
-      <span> {props.movie.title} </span>
+      <span> {this.props.movie.title} </span>
       </div> 
 
       <div style={localStyles.details}> 
-      <span> {props.movie.vote_average} </span>
+      <span> {this.props.movie.vote_average} </span>
 
       <div style={localStyles.elements}> 
-      <button onClick={props.onClickInfo}> More Info </button>
-      <button onClick={props.OnClick}> {props.buttonName} </button>
+      <button onClick={this.props.onClickInfo}> More Info </button>
+      <button onClick={this.props.OnClick}> {this.props.buttonName} </button>
       </div> 
 
       </div> 
@@ -32,26 +37,24 @@ const Movie = (props) => {
 
     </div>
     </div> 
-  );
-};
+    );
+  }
+}
 
 
-export default Movie;
+
 
 const localStyles = {
-  margin: {
-    flex: 0, 
-    marginLeft: 30
-  },
   Movie: {
     border: '2px solid green',
     padding: 30,
-    textAlign: 'center',
-    width: 200
+    width: 230,
   },
   imageCrop: {
     height: '300px',
     border: '2px solid blue',
+    display: 'flex',
+    justifyContent: 'center'
   },
   image: {
     borderRadius: 20,
@@ -65,12 +68,15 @@ const localStyles = {
     marginTop: 20,
   },
   title: {
-    textAlign: 'center',
     marginLeft: '-10px',
     fontSize: 15,
-    height: 35,
+    height: 20,
     padding: '5px 5px',
     border: '2px solid blue',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center'
   },
   details: {
     marginRight: 10,
@@ -79,7 +85,15 @@ const localStyles = {
     padding: '5px 5px',
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  elements: {
+    border: '2px solid blue',
+    display: 'flex',
+    justifyContent: 'space-between',
   }
 
 }
+
+export default Radium(Movie);

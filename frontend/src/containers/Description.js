@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import MovieList from '../controllers/MovieList';
+import Radium from 'radium';
 
 
-const Description = props => (
-  <div className="Description">
-    <span> {props.overview} </span>
-    <button onClick={props.onClick}> X </button>
-  </div>
-);
+class Description extends React.Component {
 
+  render() {
 
-export default Description;
+    return (
+      <div className="Description">
+      <span> {this.props.overview} </span>
+      <button onClick={this.props.onClick}> X </button>
+    </div>
+    );
+  }
+}
+
+export default Radium(Description);
