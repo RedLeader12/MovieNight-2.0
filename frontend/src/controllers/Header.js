@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import MovieController from '../controllers/MovieController';
+import React from 'react';
 import Styles from '../styles/baseStyling'
 import Radium from 'radium';
 
@@ -23,8 +22,8 @@ class Header extends React.Component {
         </div> 
 
         <div style={localStyles.NavigateBox}> 
-        <button onClick={this.props.onClickDiscover} style={Styles.navigate}> Discover </button>
-        <button onClick={this.props.onClickFavourites} style={Styles.navigate}> Favourites </button>
+        <button onClick={this.props.onClickDiscover} style={Styles.navigate} key='discover'> Discover </button>
+        <button onClick={this.props.onClickFavourites} style={Styles.navigate} key='favourites'> Favourites </button>
         </div> 
 
         <div style={localStyles.SearchBox}> 
@@ -65,7 +64,9 @@ const localStyles = {
     width: 250,
     padding: 10,
     outline: 'none',
-    border: 'none',
+    borderTop: Styles.colours.primary,
+    borderLeft:Styles.colours.primary,
+    borderRight:Styles.colours.primary,
     background: Styles.colours.primary,
     color: 'white',
     fontSize: 15, 

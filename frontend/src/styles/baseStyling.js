@@ -18,12 +18,19 @@ module.exports = {
   navigate: {
     marginLeft: 20,
     padding: 10, 
-    border: 'none',
     background: 'none',
     outline: 'none',
+    borderTop: '2px solid #1E2634',
+    borderLeft:'2px solid #1E2634',
+    borderRight:'2px solid #1E2634',
+    borderBottom: '2px solid #1E2634',
     fontSize: 15,
     fontFamily: 'QuickSand',
     color: '#434954',
-    fontWeight: 700
+    fontWeight: 700,
+    ':hover':{
+      borderBottom:'5px solid #f8CA0C',
+      color: '#eeeeef'
+    }
   }
 };

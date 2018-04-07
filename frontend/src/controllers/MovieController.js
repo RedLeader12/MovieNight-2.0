@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import qs from 'qs';
 import config from '../config.json';
 
 import MovieList from './MovieList';

@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import MovieList from '../controllers/MovieList';
-import Picture from '../notfound.jpg';
+import React from 'react';
 import Styles from '../styles/baseStyling'
 import Radium from 'radium';
 

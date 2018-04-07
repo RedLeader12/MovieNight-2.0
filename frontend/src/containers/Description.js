@@ -1,5 +1,4 @@
 import React from 'react';
-import MovieList from '../controllers/MovieList';
 import Styles from '../styles/baseStyling'
 import Radium from 'radium';
 
@@ -33,16 +32,26 @@ class Description extends React.Component {
 
 export default Radium(Description);
 
+const FadeInKeyframes = Radium.keyframes({
+  '0%': {opacity: '0'},
+  '100%': {opacity: '10%'},
+}, 'pulse');
+
 const localStyles = {
   Grid: {
     // border: '2px solid pink',
+    animation: '2s', 
     minWidth: '100%',
-    minHeight: '60%',
+    minHeight: '100%',
     position: 'fixed',
+    top: 0,
+    left: 0,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    background: 'rgba(8,12,17,0.95)'
+    background: 'rgba(8,12,17,0.95)',
+    animation: ' 0.4s ease-in',
+    animationName: FadeInKeyframes,
   },
   subGrid: {
     // border: '2px solid blue',
@@ -78,11 +87,10 @@ const localStyles = {
     width: 30,
     height: 30,
     borderRadius: 60,
-    outline: 'none',
     background: 'none',
     outline: Styles.colours.white,
     color: Styles.colours.white,
     fontSize: 15,
-    fontWeight: 700
+    fontWeight: 700,
   }
 }
