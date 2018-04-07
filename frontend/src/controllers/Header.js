@@ -12,7 +12,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const headingTitle = 'MovieNight ☾';
+    const headingTitle = 'Movie Night ☾ ';
 
     return (
       <div className="Header" style={localStyles.Header}>
@@ -22,8 +22,12 @@ class Header extends React.Component {
         </div> 
 
         <div style={localStyles.NavigateBox}> 
-        <button onClick={this.props.onClickDiscover} style={Styles.navigate} key='discover'> Discover </button>
-        <button onClick={this.props.onClickFavourites} style={Styles.navigate} key='favourites'> Favourites </button>
+        <button onClick={this.props.onClickDiscover}style={Styles.buttonNavigate} key='discovers' > 
+        <span key='discover'> Discover </span> </button>
+        <div> 
+        <button onClick={this.props.onClickFavourites} style={Styles.buttonNavigate} key='favourites'> 
+        <span key='favourite'> Favourites </span> </button>
+        </div> 
         </div> 
 
         <div style={localStyles.SearchBox}> 
@@ -46,14 +50,18 @@ const localStyles = {
     padding: 20
   },
   titleBox: {
-    // border: '2px solid blue'
+    border: '2px solid blue',
   },
   title: {
     color: 'white',
-    fontSize: 30
+    fontSize: 30,
   },
   NavigateBox: {
-    // border: '2px solid blue'
+    display: 'flex',
+    justifyContent: 'space-between',
+    // alignItems: 'center',
+    border: '2px solid blue',
+
   },
   SearchBox: {
     // border: '2px solid blue',
@@ -67,10 +75,13 @@ const localStyles = {
     borderTop: Styles.colours.primary,
     borderLeft:Styles.colours.primary,
     borderRight:Styles.colours.primary,
-    background: Styles.colours.primary,
+    background: 'none',
     color: 'white',
     fontSize: 15, 
-    borderBottom: '2px solid' + Styles.colours.white
+    borderBottom: '2px solid' + Styles.colours.white,
+    '@media (max-width: 414px)': {
+      width: 70,
+    },
   }
 
 }

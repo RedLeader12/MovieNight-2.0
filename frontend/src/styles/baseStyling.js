@@ -15,22 +15,25 @@ const COLOURS = {
 
 module.exports = {
   colours: COLOURS,
-  navigate: {
-    marginLeft: 20,
-    padding: 10, 
-    background: 'none',
-    outline: 'none',
-    borderTop: '2px solid #1E2634',
-    borderLeft:'2px solid #1E2634',
-    borderRight:'2px solid #1E2634',
-    borderBottom: '2px solid #1E2634',
-    fontSize: 15,
-    fontFamily: 'QuickSand',
-    color: '#434954',
-    fontWeight: 700,
-    ':hover':{
-      borderBottom:'5px solid #f8CA0C',
-      color: '#eeeeef'
+    buttonNavigate: {
+      fontSize: 15,
+      fontFamily: 'QuickSand',
+      color: '#434954',
+      fontWeight: 700,
+      margin: 0,
+      outline: 'none',
+      backgroundColor: '#1E2634',
+      borderTop: '5px solid #1E2634',
+      borderLeft: '5px solid #1E2634',
+      borderRight: '5px solid #1E2634',
+      borderBottom: '5px solid #1E2634',
+
+      ':hover':{
+        padding: 7, 
+        color: '#eeeeef',
+        borderBottom: '3px solid #f8CA0C'
+      }
+      
     }
+   
   }
-};
