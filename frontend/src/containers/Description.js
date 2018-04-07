@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieList from '../controllers/MovieList';
+import Styles from '../styles/baseStyling'
 import Radium from 'radium';
 
 

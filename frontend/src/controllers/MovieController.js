@@ -5,6 +5,7 @@ import config from '../config.json';
 
 import MovieList from './MovieList';
 import Header from './Header';
+import Styles from '../styles/baseStyling'
 
 class MovieController extends Component {
   constructor(props) {
@@ -115,10 +116,11 @@ export default MovieController;
 
 const localStyles = {
   background: {
-    border: '2px solid red',
+    // border: '2px solid red',
     position: 'absolute',
     top: 0,
     left: 0,
     width: '100vw',
+    background: Styles.colours.primary
   }
 }

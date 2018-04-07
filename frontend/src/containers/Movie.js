@@ -25,14 +25,16 @@ class Movie extends React.Component {
       </div> 
 
       <div style={localStyles.details}> 
-      <span> {this.props.movie.vote_average} </span>
+      <span style={localStyles.voteaverage}> {this.props.movie.vote_average} </span>
 
       <div style={localStyles.elements}> 
-      <button onClick={this.props.onClickInfo}> More Info </button>
-      <button onClick={this.props.OnClick}> {this.props.buttonName} </button>
+      <button onClick={this.props.onClickInfo} style={localStyles.description}> More Info </button>
+      <button onClick={this.props.OnClick} style={localStyles.button}> {this.props.buttonName} </button>
       </div> 
 
       </div> 
+
+  
     </div> 
 
     </div>
@@ -46,13 +48,13 @@ class Movie extends React.Component {
 
 const localStyles = {
   Movie: {
-    border: '2px solid green',
+    // border: '2px solid green',
     padding: 30,
     width: 230,
   },
   imageCrop: {
     height: '300px',
-    border: '2px solid blue',
+    // border: '2px solid blue',
     display: 'flex',
     justifyContent: 'center'
   },
@@ -68,19 +70,18 @@ const localStyles = {
     marginTop: 20,
   },
   title: {
-    marginLeft: '-10px',
     fontSize: 15,
-    height: 20,
+    height: 30,
     padding: '5px 5px',
-    border: '2px solid blue',
+    // border: '2px solid blue',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: Styles.colours.white
   },
   details: {
-    marginRight: 10,
-    border: '2px solid blue',
+    // border: '2px solid blue',
     height: 35,
     padding: '5px 5px',
     display: 'flex',
@@ -88,11 +89,36 @@ const localStyles = {
     justifyContent: 'space-between',
     alignItems: 'center'
   },
+  voteaverage: {
+    color: Styles.colours.white
+  },
   elements: {
-    border: '2px solid blue',
+    // border: '2px solid blue',
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  description: {
+    width: 90,
+    fontSize: 15,
+    textAlign: 'center',
+    borderRadius: 80,
+    height: 33,
+    outline: 'none',
+    fontWeight: 700,
+    margin: 5,
+    fontFamily: 'Quicksand',
+
+  },
+  button: {
+    borderRadius: 100,
+    fontSize: 15,
+    fontFamily: 'Quicksand',
+    padding: '5px 9px',
+    fontWeight: 700
+
   }
+
 
 }
 

@@ -6,6 +6,7 @@ import config from '../config.json';
 import Picture from '../notfound.jpg';
 import Movie from '../containers/Movie';
 import Description from '../containers/Description';
+import Styles from '../styles/baseStyling'
 
 
 class MovieList extends Component {
@@ -120,6 +121,7 @@ class MovieList extends Component {
       <div style={localStyles.Grid}>
         {list}
         {overview}
+        <div style={localStyles.rectangle}/> 
       </div>
     );
   }
@@ -129,11 +131,16 @@ export default MovieList;
 
 const localStyles = {
   Grid: {
-    border: '2px solid blue',
+    // border: '2px solid blue',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     padding: '50px 0px'
   },
+  rectangle: {
+    background: Styles.colours.primary,
+    width: '100vw',
+    height: 70
+  }
 }

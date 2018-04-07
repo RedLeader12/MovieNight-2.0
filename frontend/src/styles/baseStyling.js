@@ -13,5 +13,16 @@ const COLOURS = {
 
 
 module.exports = {
-  colours: COLOURS
+  colours: COLOURS,
+  navigate: {
+    marginLeft: 20,
+    padding: 10, 
+    border: 'none',
+    background: 'none',
+    outline: 'none',
+    fontSize: 15,
+    fontFamily: 'QuickSand',
+    color: '#434954',
+    fontWeight: 700
+  }
 };
