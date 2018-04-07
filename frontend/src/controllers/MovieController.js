@@ -101,12 +101,12 @@ class MovieController extends Component {
 
     return (
       <div style={localStyles.background}>
-        {header}
+          {header}
         <MovieList
           list={list}
           button={this.state.show}
           favouritesList={this.state.favouritesList}
-        />
+          />
       </div>
     );
   }

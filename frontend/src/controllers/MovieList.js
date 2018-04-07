@@ -119,8 +119,8 @@ class MovieList extends Component {
 
     return (
       <div style={localStyles.Grid}>
-        {list}
         {overview}
+        {list}
         <div style={localStyles.rectangle}/> 
       </div>
     );
@@ -141,6 +141,6 @@ const localStyles = {
   rectangle: {
     background: Styles.colours.primary,
     width: '100vw',
-    height: 70
+    height: 80
   }
 }

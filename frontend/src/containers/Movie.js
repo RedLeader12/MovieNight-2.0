@@ -48,7 +48,7 @@ class Movie extends React.Component {
 
 const localStyles = {
   Movie: {
-    // border: '2px solid green',
+    background: Styles.colours.third,
     padding: 30,
     width: 230,
   },
@@ -105,17 +105,22 @@ const localStyles = {
     borderRadius: 80,
     height: 33,
     outline: 'none',
+    border: 'none',
     fontWeight: 700,
     margin: 5,
     fontFamily: 'Quicksand',
-
+    color: 'white',
+    background: 'linear-gradient(to right,' + Styles.colours.secondaryyellow + ',' + Styles.colours.yellow + ')'
   },
   button: {
     borderRadius: 100,
     fontSize: 15,
     fontFamily: 'Quicksand',
     padding: '5px 9px',
-    fontWeight: 700
+    fontWeight: 700,
+    background: 'none',
+    outline: Styles.colours.white,
+    color: 'white'
 
   }
 
