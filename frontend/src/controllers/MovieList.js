@@ -132,8 +132,7 @@ const localStyles = {
     border: '2px solid blue',
     display: 'flex',
     flexDirection: 'row',
-    flexwrap: 'wrap',
-    padding: '0px 80px',
-
+    flexWrap: 'wrap',
+    padding: 50
   }
 }
