@@ -39,7 +39,7 @@ const FadeInKeyframes = Radium.keyframes({
 
 const localStyles = {
   Grid: {
-    border: '2px solid pink',
+    // border: '2px solid pink',
     animation: '2s', 
     minWidth: '100%',
     minHeight: '100%',
@@ -73,20 +73,24 @@ const localStyles = {
     },
   },
   Description: {
-    fontSize: 35, 
+        // border: '2px solid pink',
     opacity: 0.8,
     marginLeft: 20,
     padding: '10px 20px',
-    '@media (max-width: 414px)': {
+    '@media (min-width: 414px)': {
       fontSize: 15
     },
-    // border: '2px solid pink',
+    '@media (min-width: 786px)': {
+      fontSize: 25
+    },
+    '@media (min-width: 900px)': {
+      fontSize: 35
+    },
   },
   overview: {
     color: Styles.colours.white
   },
   buttonBox: {
-    // border: '2px solid pink',
   },
   button: {
     marginRight: 50,

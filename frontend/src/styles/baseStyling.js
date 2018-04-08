@@ -20,19 +20,22 @@ module.exports = {
       fontFamily: 'QuickSand',
       color: '#434954',
       fontWeight: 700,
-      margin: 0,
       outline: 'none',
       backgroundColor: '#1E2634',
       borderTop: '5px solid #1E2634',
       borderLeft: '5px solid #1E2634',
       borderRight: '5px solid #1E2634',
       borderBottom: '5px solid #1E2634',
-
       ':hover':{
         padding: 7, 
         color: '#eeeeef',
         borderBottom: '3px solid #f8CA0C'
-      }
+      },
+      '@media (max-width: 414px)': {
+        marginBottom: 1,
+        textAlign: 'center'
+        
+      },  
       
     }
    

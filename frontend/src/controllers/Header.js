@@ -23,10 +23,11 @@ class Header extends React.Component {
 
         <div style={localStyles.NavigateBox}> 
         <button onClick={this.props.onClickDiscover}style={Styles.buttonNavigate} key='discovers' > 
-        <span key='discover'> Discover </span> </button>
+         Discover </button>
+
         <div> 
         <button onClick={this.props.onClickFavourites} style={Styles.buttonNavigate} key='favourites'> 
-        <span key='favourite'> Favourites </span> </button>
+        Favourites </button>
         </div> 
         </div> 
 
@@ -50,26 +51,53 @@ const localStyles = {
     padding: 20
   },
   titleBox: {
-    border: '2px solid blue',
+    // border: '2px solid blue',
+
   },
   title: {
     color: 'white',
     fontSize: 30,
+    '@media (max-width: 414px)': {
+      fontSize: 20,
+      marginRight: -30
+    },
+    '@media (max-width: 630px)': {
+      fontSize: 20,
+      marginRight: -30
+    }, 
   },
   NavigateBox: {
     display: 'flex',
     justifyContent: 'space-between',
-    // alignItems: 'center',
-    border: '2px solid blue',
-
+    // border: '2px solid blue',
+    
+    '@media (max-width: 414px)': {
+      flexDirection: 'column',
+      marginRight: 100
+    },  
+    '@media (max-width: 630px)': {
+      flexDirection: 'column',
+      marginRight: 50
+    },  
+    '@media (max-width: 786px)': {
+      flexDirection: 'column',
+      marginLeft: -65
+    },  
+    '@media (max-width: 900px)': {
+      marginLeft: -30
+    },
+    
   },
   SearchBox: {
     // border: '2px solid blue',
     padding: 10,
-    marginLeft: -90
+    marginLeft: -90,
+    '@media (max-width: 414px)': {
+      padding: 0
+    },
+
   },
   search: {
-    width: 250,
     padding: 10,
     outline: 'none',
     borderTop: Styles.colours.primary,
@@ -80,7 +108,13 @@ const localStyles = {
     fontSize: 15, 
     borderBottom: '2px solid' + Styles.colours.white,
     '@media (max-width: 414px)': {
-      width: 70,
+      width: 50
+    },
+    '@media (max-width: 786px)': {
+      width: 70
+    },
+    '@media (min-width: 786px)': {
+      width: 180
     },
   }
 
