@@ -34,13 +34,12 @@ class Description extends React.Component {
 
 const FadeInKeyframes = Radium.keyframes({
   '0%': {opacity: '0'},
-  '100%': {opacity: '10%'},
-}, 'pulse');
+  '100%': {opacity: '1'},
+}, 'fadeIn');
 
 const localStyles = {
   Grid: {
     // border: '2px solid pink',
-    animation: '2s', 
     minWidth: '100%',
     minHeight: '100%',
     position: 'fixed',
@@ -50,8 +49,9 @@ const localStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     background: 'rgba(8,12,17,0.95)',
-    animation: ' 0.4s ease-in',
+    animation: 'x 0.3s ease-in',
     animationName: FadeInKeyframes,
+ 
   },
   subGrid: {
     // border: '2px solid blue',
@@ -78,13 +78,14 @@ const localStyles = {
     marginLeft: 20,
     padding: '10px 20px',
     '@media (min-width: 414px)': {
-      fontSize: 15
+      fontSize: 15,
     },
     '@media (min-width: 786px)': {
-      fontSize: 25
+      fontSize: 25,
     },
     '@media (min-width: 900px)': {
-      fontSize: 35
+      fontSize: 35,
+
     },
   },
   overview: {

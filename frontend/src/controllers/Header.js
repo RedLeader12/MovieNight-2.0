@@ -43,7 +43,7 @@ class Header extends React.Component {
 
 const localStyles = {
   Header: {
-    border: '2px solid red', 
+    // border: '2px solid red', 
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -79,7 +79,7 @@ const localStyles = {
   NavigateBox: {
     display: 'flex',
     justifyContent: 'space-between',
-    border: '2px solid blue',
+    // border: '2px solid blue',
     '@media only screen and (max-width: 414px)': {
       flexDirection: 'column',
     },
@@ -88,7 +88,7 @@ const localStyles = {
     },
   },
   SearchBox: {
-    border: '2px solid blue',
+    // border: '2px solid blue',
     padding: 10,
     '@media only screen and (max-width: 414px)': {
       width: '100vw',

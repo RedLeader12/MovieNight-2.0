@@ -26,8 +26,8 @@ class Movie extends React.Component {
       <span style={localStyles.voteaverage}> {this.props.movie.vote_average} </span>
 
       <div style={localStyles.elements}> 
-      <button onClick={this.props.onClickInfo} style={localStyles.description}> More Info </button>
-      <button onClick={this.props.OnClick} style={localStyles.button}> {this.props.buttonName} </button>
+      <button onClick={this.props.onClickInfo} style={localStyles.description} key='description' > More Info </button>
+      <button onClick={this.props.OnClick} style={localStyles.button} key='button'> {this.props.buttonName} </button>
       </div> 
 
       </div> 
@@ -41,7 +41,11 @@ class Movie extends React.Component {
   }
 }
 
-
+const popKeyframes = Radium.keyframes({
+  '0%': {fontSize: '15'},
+  '50%': {fontSize: '13'},
+  '100%': {fontSize: '15'},
+}, 'pop');
 
 
 const localStyles = {
@@ -108,19 +112,27 @@ const localStyles = {
     margin: 5,
     fontFamily: 'Quicksand',
     color: 'white',
-    background: 'linear-gradient(to right,' + Styles.colours.secondaryyellow + ',' + Styles.colours.yellow + ')'
+    background: 'linear-gradient(to right,' + Styles.colours.secondaryyellow + ',' + Styles.colours.yellow + ')',
+    ':hover': {
+      cursor: 'pointer'
+    }
   },
   button: {
     borderRadius: 100,
-    fontSize: 15,
+    fontSize: 12,
     fontFamily: 'Quicksand',
     padding: '5px 9px',
     fontWeight: 700,
-    background: 'none',
+    background: Styles.colours.third,
     outline: Styles.colours.white,
     color: 'white',
     ':hover': {
-      backgroundcolor: Styles.colours.darkYellow
+      background: Styles.colours.darkyellow,
+      fontSize: 15,
+      cursor: 'pointer'
+    },
+    ':active':{
+      fontSize: 12, 
     }
 
   }

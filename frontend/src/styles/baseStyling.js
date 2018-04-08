@@ -29,7 +29,8 @@ module.exports = {
       height: 40,
       ':hover':{
         color: '#eeeeef',
-        borderBottom: '3px solid #f8CA0C'
+        borderBottom: '3px solid #f8CA0C',
+        cursor: 'pointer'
       },
       '@media (max-width: 414px)': {
         marginBottom: 1,
