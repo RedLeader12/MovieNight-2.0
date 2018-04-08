@@ -26,8 +26,8 @@ module.exports = {
       borderLeft: '5px solid #1E2634',
       borderRight: '5px solid #1E2634',
       borderBottom: '5px solid #1E2634',
+      height: 40,
       ':hover':{
-        padding: 7, 
         color: '#eeeeef',
         borderBottom: '3px solid #f8CA0C'
       },

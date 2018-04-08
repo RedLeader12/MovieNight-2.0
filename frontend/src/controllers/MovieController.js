@@ -111,8 +111,6 @@ class MovieController extends Component {
   }
 }
 
-export default MovieController;
-
 const localStyles = {
   background: {
     // border: '2px solid red',
@@ -123,3 +121,7 @@ const localStyles = {
     background: Styles.colours.primary
   }
 }
+
+
+export default MovieController;
+

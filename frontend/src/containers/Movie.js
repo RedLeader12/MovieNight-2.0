@@ -118,7 +118,10 @@ const localStyles = {
     fontWeight: 700,
     background: 'none',
     outline: Styles.colours.white,
-    color: 'white'
+    color: 'white',
+    ':hover': {
+      backgroundcolor: Styles.colours.darkYellow
+    }
 
   }
 

@@ -30,7 +30,7 @@ class Description extends React.Component {
   }
 }
 
-export default Radium(Description);
+
 
 const FadeInKeyframes = Radium.keyframes({
   '0%': {opacity: '0'},
@@ -104,3 +104,5 @@ const localStyles = {
     fontWeight: 700,
   }
 }
+
+export default Radium(Description);

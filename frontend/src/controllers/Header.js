@@ -43,12 +43,19 @@ class Header extends React.Component {
 
 const localStyles = {
   Header: {
-    // border: '2px solid red',
-    height: 50, 
+    border: '2px solid red', 
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20
+    padding: '10px 20px',
+    '@media only screen and (max-width: 414px)': {
+      justifyContent: 'flexStart',
+      flexWrap: 'wrap'
+    },
+    '@media only screen and (max-width: 786px)': {
+      justifyContent: 'flexStart',
+      flexWrap: 'wrap'
+    },
   },
   titleBox: {
     // border: '2px solid blue',
@@ -65,35 +72,33 @@ const localStyles = {
       fontSize: 20,
       marginRight: -30
     }, 
+    '@media (max-width: 786px)': {
+      fontSize: 25
+    }, 
   },
   NavigateBox: {
     display: 'flex',
     justifyContent: 'space-between',
-    // border: '2px solid blue',
-    
-    '@media (max-width: 414px)': {
+    border: '2px solid blue',
+    '@media only screen and (max-width: 414px)': {
       flexDirection: 'column',
-      marginRight: 100
-    },  
-    '@media (max-width: 630px)': {
-      flexDirection: 'column',
-      marginRight: 50
-    },  
-    '@media (max-width: 786px)': {
-      flexDirection: 'column',
-      marginLeft: -65
-    },  
-    '@media (max-width: 900px)': {
-      marginLeft: -30
     },
-    
+    '@media only screen and (min-width: 630px)': {
+      marginLeft: 100
+    },
   },
   SearchBox: {
-    // border: '2px solid blue',
+    border: '2px solid blue',
     padding: 10,
-    marginLeft: -90,
-    '@media (max-width: 414px)': {
-      padding: 0
+    '@media only screen and (max-width: 414px)': {
+      width: '100vw',
+      display: 'flex',
+      justifyContent: 'center'
+    },
+   '@media only screen and (max-width: 786px)': {
+      width: '100vw',
+      display: 'flex',
+      justifyContent: 'center'
     },
 
   },
@@ -107,15 +112,8 @@ const localStyles = {
     color: 'white',
     fontSize: 15, 
     borderBottom: '2px solid' + Styles.colours.white,
-    '@media (max-width: 414px)': {
-      width: 50
-    },
-    '@media (max-width: 786px)': {
-      width: 70
-    },
-    '@media (min-width: 786px)': {
-      width: 180
-    },
+    width: 250
+
   }
 
 }

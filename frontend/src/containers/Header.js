@@ -17,8 +17,6 @@ const Header = (props) => {
   );
 };
 
-export default Header;
-
 const localStyles = {
   header: {
    border: '1px solid blue'
@@ -27,3 +25,6 @@ const localStyles = {
     color: 'pink'
   }
 }
+
+export default Header;
+

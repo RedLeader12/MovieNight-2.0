@@ -126,7 +126,6 @@ class MovieList extends Component {
   }
 }
 
-export default MovieList;
 
 const localStyles = {
   Grid: {
@@ -143,3 +142,6 @@ const localStyles = {
     height: 80
   }
 }
+
+
+export default MovieList;
