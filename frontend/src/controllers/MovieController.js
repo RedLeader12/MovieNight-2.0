@@ -71,7 +71,6 @@ class MovieController extends Component {
         console.log(this.state.favouritesList);
       })
       .catch(err => console.log('---errrr', err));
-      console.log(this.state.favouritesList)
       })
     .catch((error) => {
       console.log(error);
@@ -160,7 +159,8 @@ const localStyles = {
     top: 0,
     left: 0,
     width: '100vw',
-    background: Styles.colours.primary
+    background: Styles.colours.primary,
+    
   }
 }
 

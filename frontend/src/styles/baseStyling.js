@@ -34,8 +34,7 @@ module.exports = {
       },
       '@media (max-width: 414px)': {
         marginBottom: 1,
-        textAlign: 'center'
-        
+        textAlign: 'center'     
       },  
       
     }

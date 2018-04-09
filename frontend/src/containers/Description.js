@@ -49,12 +49,13 @@ const localStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     background: 'rgba(8,12,17,0.95)',
-    animation: 'x 0.3s ease-in',
-    animationName: FadeInKeyframes,
+   
  
   },
   subGrid: {
     // border: '2px solid blue',
+    animation: 'x 0.3s ease-in',
+    animationName: FadeInKeyframes,
     display: 'flex',
     padding: 20,
     justifyContent: 'center',
@@ -77,16 +78,15 @@ const localStyles = {
     opacity: 0.8,
     marginLeft: 20,
     padding: '10px 20px',
-    '@media (min-width: 414px)': {
-      fontSize: 15,
-    },
-    '@media (min-width: 786px)': {
-      fontSize: 25,
-    },
-    '@media (min-width: 900px)': {
-      fontSize: 35,
-
-    },
+    // '@media (min-width: 414px)': { 
+    //   fontSize: 15,
+    // },
+    // '@media (min-width: 786px)': {
+    //   fontSize: 25,
+    // },
+    // '@media (min-width: 900px)': {
+    //   fontSize: 35,
+    // },
   },
   overview: {
     color: Styles.colours.white

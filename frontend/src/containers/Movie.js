@@ -2,7 +2,6 @@ import React from 'react';
 import Styles from '../styles/baseStyling'
 import Radium from 'radium';
 
-
 class Movie extends React.Component {
 
   render() {
@@ -10,8 +9,8 @@ class Movie extends React.Component {
     const imageChecker = this.props.imageChecker(this.props.movie.poster_path);
 
     return (
-      <div style={localStyles.margin}> 
-    <div className="Movie" style={localStyles.Movie}>
+      <div className="Movie" style={localStyles.Movie}>
+
 
     <div style={localStyles.imageCrop}> 
       <img src={imageChecker} alt="" style={localStyles.image} />
@@ -36,7 +35,7 @@ class Movie extends React.Component {
     </div> 
 
     </div>
-    </div> 
+
     );
   }
 }

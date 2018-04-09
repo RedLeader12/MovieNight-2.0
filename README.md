@@ -36,3 +36,5 @@ The Database cannot take in the full object given I structured the database acco
     "communityScore": 9.9
 }
 ```
+
+Although all the testing does not work given the changes to the structure, I've used eslint to write the best code I can. 
