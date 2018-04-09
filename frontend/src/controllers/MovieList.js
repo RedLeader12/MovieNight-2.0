@@ -67,22 +67,13 @@ class MovieList extends Component {
         .catch((error) => {
           console.log(error);
         });
-      this.forceUpdate();
+
     }
 
     if (this.props.button === 'favourites') {
-      this.props.list.splice(index, 1);
-      axios.delete(`${config.database}/${selected.id}`)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      this.forceUpdate();
-      return this.props.list;
-    }
+      this.props.deleteRequest(selected, index)
   }
+}
 
 
   render() {

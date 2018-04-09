@@ -50,7 +50,20 @@ class MovieController extends Component {
         .catch(err => console.log('---errrr', err));
     }
   }
+  
+  deleteMovieHandler = (select, index) => {
+    this.state.favouritesList.splice(index, 1)
+    axios.delete(`${config.database}/${select.id}`)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    this.setState({favouritesList: this.state.favouritesList})
+  }
 
+  
   decimalChangeHandler = (list) => {
     list.map((movie) => {
       const number = movie.popularity;
@@ -105,6 +118,7 @@ class MovieController extends Component {
           list={list}
           button={this.state.show}
           favouritesList={this.state.favouritesList}
+          deleteRequest={this.deleteMovieHandler}
           />
       </div>
     );
