@@ -41,13 +41,6 @@ class Movie extends React.Component {
   }
 }
 
-const popKeyframes = Radium.keyframes({
-  '0%': {fontSize: '15'},
-  '50%': {fontSize: '13'},
-  '100%': {fontSize: '15'},
-}, 'pop');
-
-
 const localStyles = {
   Movie: {
     background: Styles.colours.third,

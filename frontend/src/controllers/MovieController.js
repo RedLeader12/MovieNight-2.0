@@ -19,7 +19,7 @@ class MovieController extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const self = this;
 
     axios.get(config.api)
@@ -31,13 +31,14 @@ class MovieController extends Component {
       })
       .catch(err => console.log('---errrr', err));
 
-    axios.get(config.database)
+      axios.get(config.database)
       .then((res) => {
-        self.setState({ favouritesList: res.data.data });
+        this.setState({ favouritesList: res.data.data });
         console.log(this.state.favouritesList);
       })
       .catch(err => console.log('---errrr', err));
-  }
+    }
+
 
   componentDidUpdate() {
     if (this.state.search.length > 0) {
@@ -49,6 +50,33 @@ class MovieController extends Component {
         })
         .catch(err => console.log('---errrr', err));
     }
+
+  }
+
+  postMovieHandler = (selected, index) => {
+    let select = selected
+
+    axios.post(config.database, {
+      overview: select.overview,
+      poster_path: select.poster_path,
+      release_date: select.release_date,
+      title: select.title,
+      vote_average: select.vote_average,
+      popularity: select.popularity,
+    })
+    .then((res) => {
+      axios.get(config.database)
+      .then((res) => {
+        this.setState({ favouritesList: res.data.data });
+        console.log(this.state.favouritesList);
+      })
+      .catch(err => console.log('---errrr', err));
+      console.log(this.state.favouritesList)
+      })
+    .catch((error) => {
+      console.log(error);
+    });
+
   }
   
   deleteMovieHandler = (select, index) => {
@@ -76,7 +104,6 @@ class MovieController extends Component {
     const string = event.target.value;
     const changedString = string.split(' ').join('20%');
     this.setState({ search: changedString }, function state() {
-      console.log(this.state.search);
     });
   }
 
@@ -118,6 +145,7 @@ class MovieController extends Component {
           list={list}
           button={this.state.show}
           favouritesList={this.state.favouritesList}
+          postRequest={this.postMovieHandler}
           deleteRequest={this.deleteMovieHandler}
           />
       </div>

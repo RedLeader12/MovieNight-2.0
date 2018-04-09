@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import config from '../config.json';
 
 import Picture from '../notfound.jpg';
 import Movie from '../containers/Movie';
@@ -20,7 +18,6 @@ class MovieList extends Component {
 
   descriptionShowHandler = (index) => {
     this.setState({ show: true }, function state() {
-      console.log(this.state.show);
       this.descriptionSelectHandler(index);
     });
   }
@@ -29,7 +26,6 @@ class MovieList extends Component {
     if (this.state.show === true) {
       const selected = this.props.list[index].overview;
       this.setState({ description: selected }, function state() {
-        console.log(this.state.description);
       });
     }
   }
@@ -51,23 +47,8 @@ class MovieList extends Component {
 
   buttonFunctionHandler = (index) => {
     const selected = this.props.list[index];
-    console.log(this.props.button);
     if (this.props.button === 'discover') {
-      axios.post(config.database, {
-        overview: selected.overview,
-        poster_path: selected.poster_path,
-        release_date: selected.release_date,
-        title: selected.title,
-        vote_average: selected.vote_average,
-        popularity: selected.popularity,
-      })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-
+      this.props.postRequest(selected)
     }
 
     if (this.props.button === 'favourites') {
