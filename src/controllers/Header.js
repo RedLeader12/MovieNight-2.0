@@ -2,6 +2,8 @@ import React from 'react';
 import Styles from '../styles/baseStyling'
 import Radium from 'radium';
 
+import Search from '../public/unnamed1.png'
+
 
 class Header extends React.Component {
   constructor(props) {
@@ -32,7 +34,8 @@ class Header extends React.Component {
         </div> 
 
         <div style={localStyles.SearchBox}> 
-        <input type="text" name="search" onChange={this.props.onChange} style={localStyles.search}/>
+      <img src={Search} style={localStyles.searchIcon}/>
+        <input type="text" name="search" onChange={this.props.onChange} style={localStyles.search} />
         </div> 
 
 
@@ -90,6 +93,8 @@ const localStyles = {
   SearchBox: {
     // border: '2px solid blue',
     padding: 10,
+    display: 'flex',
+    justifyContent: 'space-between',
     '@media only screen and (max-width: 414px)': {
       width: '100vw',
       display: 'flex',
@@ -101,6 +106,11 @@ const localStyles = {
       justifyContent: 'center'
     },
 
+  },
+  searchIcon: {
+    // border: '2px solid blue',
+    width: 30, 
+    height: 30,
   },
   search: {
     padding: 10,

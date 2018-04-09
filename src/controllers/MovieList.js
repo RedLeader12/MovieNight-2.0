@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Picture from '../notfound.jpg';
+import Picture from '../public/notfound.jpg';
 import Movie from '../containers/Movie';
 import Description from '../containers/Description';
 import Styles from '../styles/baseStyling'
