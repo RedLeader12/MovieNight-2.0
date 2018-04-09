@@ -4,38 +4,5 @@ Want to save your list of movies to reference later on? Use MovieNight where it 
 
 ## Instructions
 
-1. Clone the repo to your Desktop
-2. Don't forget to " npm install " in both the front-end and back-end
-3. Databases!
-
-```
-Given we are using postgresql, you need to make a database called 'movienight' and 'movienight_test'
-
-Then you need to run the following knex commands to get that up and running.
-
-knex migrate:latest
-knex seed: run 
-
-If you make a mistake, you can undo them using:
-
-knex migrate: rollback
-```
-
-## Comments: 
-
-The Database cannot take in the full object given I structured the database according to the given example. Along with that, the data is modified for the decimal places. 
-
-```
-{
-    "_id": 396371,
-    "overview": "Naval Aviator, Pete 'Maverick' Mitchell (Tom Cruise), takes a whirlwind adventure with partner Nick 'Goose' Bradshaw. Sexy, misunderstood, full-throttle machismo. Tremendous.",
-    "posterPath": "/h9hUP5ZJGsjL2wbERrGlj4dMjZq.jpg",
-    "releaseDate": "2017-12-21",
-    "title": "Top Gun",
-    "ownScore": 5.0
-    "communityScore": 9.9
-}
-```
-
-Although all the testing does not work given the changes to the structure, I've used eslint to write the best code I can. 
-The only bug is that when one refrehses 
+This is all on heroku so you don't have to do anything. Hayy!
+Heroku Link: https://immense-garden-44326.herokuapp.com/
