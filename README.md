@@ -38,3 +38,4 @@ The Database cannot take in the full object given I structured the database acco
 ```
 
 Although all the testing does not work given the changes to the structure, I've used eslint to write the best code I can. 
+The only bug is that when one refrehses 
